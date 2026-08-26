@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/blum-design-system-4ecd3d16-6a21-4fd8-9e73-4d40e40ab3e7/tokens/colors.css">
+<link rel="stylesheet" href="_ds/blum-design-system-4ecd3d16-6a21-4fd8-9e73-4d40e40ab3e7/tokens/typography.css">
+<link rel="stylesheet" href="_ds/blum-design-system-4ecd3d16-6a21-4fd8-9e73-4d40e40ab3e7/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/blum-design-system-4ecd3d16-6a21-4fd8-9e73-4d40e40ab3e7/tokens/effects.css">
+<link rel="stylesheet" href="_ds/blum-design-system-4ecd3d16-6a21-4fd8-9e73-4d40e40ab3e7/styles.css">
+<script src="_ds/blum-design-system-4ecd3d16-6a21-4fd8-9e73-4d40e40ab3e7/_ds_bundle.js"></script>
+<style>
+  body{margin:0;font-family:'Sora',sans-serif;background:#FFFFFF;}
+  a{color:#002E2B;text-decoration:none;}
+  a:hover{color:#4FB8B1;}
+  @keyframes blumFloat{0%,100%{transform:translateY(0) rotate(-0.4deg);}50%{transform:translateY(-22px) rotate(0.4deg);}}
+  @keyframes blumStage{0%{opacity:0;transform:translateY(20px);}7%{opacity:1;transform:translateY(0);}86%{opacity:1;transform:translateY(0);}95%,100%{opacity:0;transform:translateY(0);}}
+  @keyframes blumStageDot{0%{opacity:0;}7%{opacity:1;}86%{opacity:1;}95%,100%{opacity:0;}}
+  @media (max-width: 900px){ .bl5-stage-arrow{display:none !important;} }
+  .bl5-res .bl5-res-txt{max-height:0;opacity:0;overflow:hidden;margin-top:0;transition:max-height 0.3s ease,opacity 0.3s ease,margin-top 0.3s ease;}
+  .bl5-res:hover{background:rgba(119,207,201,0.12) !important;border-color:rgba(119,207,201,0.55) !important;}
+  .bl5-res:hover .bl5-res-txt{max-height:120px;opacity:1;margin-top:8px;}
+  @keyframes blumMarquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (max-width: 1100px){
+    .bl5-hero-wrap{flex-direction:column !important;align-items:stretch !important;min-height:0 !important;padding:104px 6% 30px !important;}
+    .bl5-hero-copy{position:relative !important;width:100% !important;max-width:560px !important;margin:0 auto !important;}
+    .bl5-hero-img{position:relative !important;width:100% !important;height:auto !important;margin-top:28px;border-radius:16px;-webkit-mask-image:none !important;mask-image:none !important;}
+    .bl5-hero-scrim{display:none !important;}
+    .bl5-hero-badges{position:relative !important;right:auto !important;bottom:auto !important;margin-top:14px;justify-content:center;}
+  }
+  @media (max-width: 900px){
+    .bl5-nav-links{display:none !important;}
+    .bl5-hero-row{flex-wrap:wrap !important;}
+    .bl5-hero-dash{min-width:0 !important;flex:1 1 100% !important;}
+    .bl5-prob-row{grid-template-columns:1fr !important;}
+    footer > div:first-of-type{grid-template-columns:1fr 1fr !important;}
+    .bl4-app-row{flex-wrap:wrap !important;}
+    section{padding-left:6% !important;padding-right:6% !important;}
+    .bl5-stage-arrow{display:none !important;}
+  }
+  @media (max-width: 620px){
+    section{padding-top:64px !important;padding-bottom:64px !important;}
+    h1{font-size:26px !important;}
+    h2{font-size:24px !important;}
+    .bl5-hero-dash > div:last-of-type{justify-content:center !important;}
+    .bl5-hero-dash > div[style*="position:absolute"]{left:-8px !important;bottom:-18px !important;width:84px !important;height:174px !important;}
+    footer > div:first-of-type{grid-template-columns:1fr !important;gap:28px !important;}
+    .bl4-app-row{gap:34px !important;}
+    .bl4-app-row > div:first-child > div:first-child{width:220px !important;}
+  }
+</style>
+</helmet>
+<template id="__bundler_thumbnail" data-bg-color="#002E2B">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#002E2B"></rect><path d="M50 28 L70 64 L30 64 Z" fill="#77CFC9"></path><circle cx="50" cy="57" r="5" fill="#002E2B"></circle></svg>
+</template>
+<div data-screen-label="Landing v5" style="width:100%;background:#FFFFFF;color:#002E2B;overflow-x:hidden;">
+
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 28px;background:rgba(21,62,57,0.78);backdrop-filter:blur(12px);">
+    <img src="assets/logo-07.png" onClick="{{ scrollToTop }}" style="height:40px;cursor:pointer;" alt="blum">
+    <div class="bl5-nav-links" style="display:flex;gap:24px;align-items:center;margin-left:auto;">
+      <a href="#metodo" style="font-size:13.5px;font-weight:600;color:#FFFFFF;" style-hover="color:#77CFC9;">Qué hacemos</a>
+      <a href="#planes" style="font-size:13.5px;font-weight:600;color:#FFFFFF;" style-hover="color:#77CFC9;">Planes</a>
+      <a href="#empezar" style="font-size:13.5px;font-weight:600;color:#FFFFFF;" style-hover="color:#77CFC9;">Cómo empezar</a>
+      <a href="#contacto" style="font-size:13.5px;font-weight:600;color:#FFFFFF;" style-hover="color:#77CFC9;">Contacto</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <button onClick="{{ scrollToContact }}" style="background:#8FD8D2;color:#002E2B;border:none;border-radius:24px;padding:11px 24px;font-family:'Sora',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;" style-hover="background:#FFFFFF;">Solicitar demo</button>
+      <a href="https://www.appbaumsystem.com" target="_blank" rel="noopener" style="display:inline-block;font-size:13.5px;font-weight:700;color:#FFFFFF;border:1.5px solid #77CFC9;border-radius:24px;padding:9px 22px;" style-hover="background:#77CFC9;color:#002E2B;">Iniciar sesión</a>
+    </div>
+  </nav>
+
+  <a href="https://wa.me/56900000000" target="_blank" rel="noopener" style="position:fixed;bottom:24px;right:24px;z-index:60;display:flex;align-items:center;gap:12px;background:#002E2B;border:1px solid rgba(119,207,201,0.5);border-radius:34px;padding:10px 20px 10px 10px;box-shadow:0 14px 34px -10px rgba(0,20,18,0.5);" style-hover="background:#0d4a45;">
+    <span style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#77CFC9;">
+      <img src="assets/isotipo-nave.png" style="width:22px;" alt="">
+    </span>
+    <span style="display:flex;flex-direction:column;line-height:1.25;">
+      <span style="font-family:'Sora',sans-serif;font-size:13.5px;font-weight:700;color:#FFFFFF;">¿Tienes dudas?</span>
+      <span style="font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:#77CFC9;">Contáctanos</span>
+    </span>
+  </a>
+
+  <section style="position:relative;display:flex;flex-direction:column;padding:0 0 26px;box-sizing:border-box;overflow:hidden;background:linear-gradient(170deg,#0a3f3a 0%,#062e2a 60%,#04241f 100%);">
+    <div class="bl5-hero-wrap" style="position:relative;width:100%;min-height:620px;display:flex;align-items:center;padding:116px 5% 70px;box-sizing:border-box;">
+      <img class="bl5-hero-img" src="assets/hero-terreno-oficina.png" style="position:absolute;right:0;top:0;height:100%;width:62%;object-fit:cover;object-position:center;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%);opacity:1;" alt="Del terreno a la oficina: operador midiendo en el campo y gerente viendo los datos en BLUM">
+      <div class="bl5-hero-scrim" style="position:absolute;left:0;top:0;height:100%;width:44%;background:linear-gradient(90deg,#062e2a 0%,rgba(6,46,42,0.7) 65%,rgba(6,46,42,0) 100%);"></div>
+      <div class="bl5-hero-copy" style="position:relative;max-width:460px;width:42%;text-align:left;">
+        <span style="display:inline-block;font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#CFF3F0;background:rgba(119,207,201,0.14);border-radius:20px;padding:8px 16px;margin-bottom:18px;">BLUM · GESTIÓN DE EQUIPOS DE RIEGO TECNIFICADO</span>
+        <h1 style="font-size:clamp(23px,2.2vw,33px);line-height:1.2;color:#FFFFFF;font-weight:700;margin:0 0 16px;text-wrap:balance;">Software de riego: <span style="color: rgb(245, 166, 35);">Registro de medición y eventos.</span> <br>Qué ocurre en terreno.</h1>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,0.85);margin:0 0 24px;max-width:440px;">Tu operador&nbsp;<strong style="color:#FFFFFF;">registra mediciones y eventos desde la app</strong>, simple y en terreno.<b> Blum</b> centraliza la información, te entrega <strong style="color:#FFFFFF;">alertas y tendencias</strong> para armar tu <strong style="color:#FFFFFF;">plan de acción</strong> antes de que las fallas afecten el cultivo.</p>
+      </div>
+<div class="bl5-hero-badges" style="position:absolute;left:5%;right:34px;bottom:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+          <button onClick="{{ scrollToContact }}" style="background:#77CFC9;color:#002E2B;border:none;border-radius:28px;padding:16px 34px;font-family:'Sora',sans-serif;font-size:15.5px;font-weight:700;cursor:pointer;box-shadow:0 12px 30px -10px rgba(119,207,201,0.5);transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);background:#8fdbd5;">Agenda una demo</button>
+          <button onClick="{{ scrollToMetodo }}" style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.08);color:#FFFFFF;border:1.5px solid rgba(255,255,255,0.5);border-radius:28px;padding:13px 24px;font-family:'Sora',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background 0.2s ease;" style-hover="background:rgba(255,255,255,0.16);">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"></path></svg>
+            ¿Quieres ver cómo medir?
+          </button>
+          <span style="flex:1 1 auto;"></span>
+          <a href="https://apps.apple.com" target="_blank" rel="noopener" aria-label="Descargar en App Store" style="display:inline-flex;align-items:center;gap:7px;background:rgba(0,20,18,0.5);border:1px solid rgba(255,255,255,0.22);border-radius:8px;padding:6px 10px;color:#FFFFFF;" style-hover="background:rgba(0,20,18,0.7);color:#FFFFFF;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-1-1.94.03-3.72 1.13-4.72 2.86-2.01 3.49-.51 8.66 1.45 11.49.96 1.39 2.1 2.94 3.6 2.88 1.45-.06 1.99-.93 3.74-.93s2.24.93 3.77.9c1.56-.03 2.54-1.41 3.49-2.8 1.1-1.61 1.55-3.17 1.58-3.25-.04-.02-3.03-1.16-3.06-4.59zM14.17 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z"></path></svg>
+            <span style="display:flex;flex-direction:column;line-height:1.15;text-align:left;"><span style="font-family:'IBM Plex Sans',sans-serif;font-size:7.5px;opacity:0.8;">Descárgala en el</span><span style="font-family:'Sora',sans-serif;font-size:10.5px;font-weight:700;">App Store</span></span>
+          </a>
+          <a href="https://play.google.com" target="_blank" rel="noopener" aria-label="Descargar en Google Play" style="display:inline-flex;align-items:center;gap:7px;background:rgba(0,20,18,0.5);border:1px solid rgba(255,255,255,0.22);border-radius:8px;padding:6px 10px;color:#FFFFFF;" style-hover="background:rgba(0,20,18,0.7);color:#FFFFFF;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8c-.35.37-.55.94-.55 1.68v17.07c0 .74.2 1.31.55 1.68l.09.08 9.56-9.56v-.22L3.69 1.72l-.09.08z"></path><path d="M16.83 15.93l-3.58-3.18v-.22l3.58-3.18.08.05 3.78 2.15c1.08.61 1.08 1.61 0 2.23l-3.78 2.15-.08 0z" opacity="0.85"></path><path d="M16.91 15.88L13.25 12.5 3.6 22.23c.36.38 .95.42 1.62.04l11.69-6.39z" opacity="0.7"></path><path d="M16.91 9.12L5.22 2.73c-.67-.38-1.26-.34-1.62.04l9.65 9.73 3.66-3.38z" opacity="0.6"></path></svg>
+            <span style="display:flex;flex-direction:column;line-height:1.15;text-align:left;"><span style="font-family:'IBM Plex Sans',sans-serif;font-size:7.5px;opacity:0.8;">Disponible en</span><span style="font-family:'Sora',sans-serif;font-size:10.5px;font-weight:700;">Google Play</span></span>
+          </a>
+        </div>
+    </div>
+    <div onClick="{{ scrollToMetodo }}" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:22px;cursor:pointer;">
+      <span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;color:#FFFFFF;background:rgba(4,42,38,0.6);border-radius:14px;padding:5px 12px;">DESCUBRE CÓMO FUNCIONA</span>
+      <span style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(119,207,201,0.7);background:rgba(4,42,38,0.6);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+      </span>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,#FFFFFF 100%);pointer-events:none;"></div>
+  </section>
+
+  <section id="problema" style="padding:40px 5% 100px;background:#FFFFFF;">
+    <div style="max-width:1050px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:44px;">
+        <span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#0d6b64;">EL PROBLEMA QUE RESOLVEMOS</span>
+        <h2 style="font-size:clamp(28px,3vw,42px);line-height:1.2;font-weight:700;margin:14px auto 14px;max-width:680px;text-wrap:balance;">¿Sabes cómo se está regando realmente tu campo?</h2>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.7;color:rgba(0,46,43,0.72);max-width:620px;margin:0 auto;">El riego ocurre en terreno. Pero las decisiones se toman lejos de él. BLUM conecta ambos mundos con información real, trazable y disponible al instante.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:34px;">
+        <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;color:rgba(0,46,43,0.65);">MEDIR</span>
+        <svg width="44" height="12" viewBox="0 0 44 12"><path d="M2 6 H36" stroke="#77CFC9" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round"><animate attributeName="stroke-dashoffset" from="20" to="0" dur="1.4s" repeatCount="indefinite"></animate></path><path d="M34 1 L42 6 L34 11" fill="none" stroke="#77CFC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span style="display:inline-flex;align-items:center;gap:7px;background:#002E2B;border-radius:20px;padding:8px 16px;"><img src="assets/isotipo-nave.png" style="width:14px;" alt=""><span style="font-family:'Sora',sans-serif;font-size:12.5px;font-weight:700;color:#FFFFFF;">BLUM</span></span>
+        <svg width="44" height="12" viewBox="0 0 44 12"><path d="M2 6 H36" stroke="#77CFC9" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round"><animate attributeName="stroke-dashoffset" from="20" to="0" dur="1.4s" repeatCount="indefinite"></animate></path><path d="M34 1 L42 6 L34 11" fill="none" stroke="#77CFC9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;color:rgba(0,46,43,0.65);">DECIDIR</span>
+      </div>
+      <p style="text-align:center;font-family:'Sora',sans-serif;font-size:clamp(20px,2.2vw,28px);font-weight:700;color:#002E2B;margin:36px auto 0;max-width:560px;text-wrap:balance;">Lo que pasa en terreno, llega a quién decide.</p>
+    </div>
+  </section>
+
+  <section id="metodo" style="position:relative;padding:100px 5%;background:#002E2B;overflow:hidden;">
+    <img src="assets/patron-topografico.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.09;mix-blend-mode:screen;" alt="">
+    <span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#77CFC9;">LA SOLUCIÓN · MÉTODO BLUM</span><div style="position:relative;max-width:1150px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:56px;">
+        {{ stageWatcher }}
+        
+      </div>
+      <div style="display:flex;gap:8px;align-items:stretch;flex-wrap:wrap;margin-bottom:44px;">
+        <div style="flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:{{ stageOp }};transform:translateY({{ stageY }});transition:opacity 0.75s ease 0s,transform 0.75s ease 0s;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#77CFC9;color:#002E2B;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;">01</span>
+          <h3 style="font-size:20px;font-weight:700;color:#FFFFFF;margin:0 0 6px;">Registrar</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#77CFC9;margin:0 0 12px;">LA OPERACIÓN REAL</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0;">El equipo documenta <strong style="color:#FFFFFF;">mediciones, fallas, fotografías y eventos desde el celular</strong>. Cada registro queda asociado a una persona, fecha, ubicación y equipo, <strong style="color:#FFFFFF;">incluso sin conexión</strong>.</p>
+        </div>
+        <div class="bl5-stage-arrow" style="display:flex;align-items:center;justify-content:center;flex:0 0 34px;opacity:{{ stageOp }};transition:opacity 0.6s ease 0.4s;">
+          <span style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+            <span style="width:5px;height:5px;border-radius:50%;background:rgba(119,207,201,0.5);"></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+            <span style="width:5px;height:5px;border-radius:50%;background:rgba(119,207,201,0.5);"></span>
+          </span>
+        </div>
+        <div style="flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:{{ stageOp }};transform:translateY({{ stageY }});transition:opacity 0.75s ease 0.7s,transform 0.75s ease 0.7s;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#77CFC9;color:#002E2B;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;">02</span>
+          <h3 style="font-size:20px;font-weight:700;color:#FFFFFF;margin:0 0 6px;">Visibilizar</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#77CFC9;margin:0 0 12px;">LO QUE REQUIERE ATENCIÓN</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0;">Blum organiza los registros en <strong style="color:#FFFFFF;">historial, mapas, comparaciones y alertas</strong>. No se limita a mostrar datos: <strong style="color:#FFFFFF;">identifica desviaciones, tendencias y prioridades</strong>.</p>
+        </div>
+        <div class="bl5-stage-arrow" style="display:flex;align-items:center;justify-content:center;flex:0 0 34px;opacity:{{ stageOp }};transition:opacity 0.6s ease 1.1s;">
+          <span style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+            <span style="width:5px;height:5px;border-radius:50%;background:rgba(119,207,201,0.5);"></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+            <span style="width:5px;height:5px;border-radius:50%;background:rgba(119,207,201,0.5);"></span>
+          </span>
+        </div>
+        <div style="flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:{{ stageOp }};transform:translateY({{ stageY }});transition:opacity 0.75s ease 1.4s,transform 0.75s ease 1.4s;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#77CFC9;color:#002E2B;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;">03</span>
+          <h3 style="font-size:20px;font-weight:700;color:#FFFFFF;margin:0 0 6px;">Actuar</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#77CFC9;margin:0 0 12px;">ANTES DE QUE SEA TARDE</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0;">La información se convierte en <strong style="color:#FFFFFF;">correcciones, tareas, mantenciones y decisiones concretas</strong>. No observar el problema: <strong style="color:#FFFFFF;">intervenir a tiempo</strong> y dejar respaldo.</p>
+        </div>
+      </div>
+      
+      <div id="resultados" style="margin-top:54px;">
+        <p style="text-align:center;font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:rgba(255,255,255,0.55);margin:0 0 20px;">KPI DE TUS DATOS</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;">
+        <div class="bl5-res" style="position:relative;background:rgba(255,255,255,0.05);border:1px solid rgba(119,207,201,0.22);border-radius:16px;padding:20px 16px;text-align:center;cursor:default;transition:background 0.25s ease,border-color 0.25s ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(119,207,201,0.16);margin-bottom:12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"></path><circle cx="12" cy="12" r="9"></circle></svg>
+          </span>
+          <h3 style="font-size:14px;font-weight:700;color:#FFFFFF;margin:0;">Trazabilidad completa</h3>
+          <p class="bl5-res-txt" style="font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;">Qué ocurrió, cuándo, quién lo registró y en qué equipo.</p>
+        </div>
+        <div class="bl5-res" style="position:relative;background:rgba(255,255,255,0.05);border:1px solid rgba(119,207,201,0.22);border-radius:16px;padding:20px 16px;text-align:center;cursor:default;transition:background 0.25s ease,border-color 0.25s ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(119,207,201,0.16);margin-bottom:12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"></path></svg>
+          </span>
+          <h3 style="font-size:14px;font-weight:700;color:#FFFFFF;margin:0;">Alertas a tiempo</h3>
+          <p class="bl5-res-txt" style="font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;">Desviaciones de presión y caudal visibles antes del daño.</p>
+        </div>
+        <div class="bl5-res" style="position:relative;background:rgba(255,255,255,0.05);border:1px solid rgba(119,207,201,0.22);border-radius:16px;padding:20px 16px;text-align:center;cursor:default;transition:background 0.25s ease,border-color 0.25s ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(119,207,201,0.16);margin-bottom:12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"></path></svg>
+          </span>
+          <h3 style="font-size:14px;font-weight:700;color:#FFFFFF;margin:0;">Control a distancia</h3>
+          <p class="bl5-res-txt" style="font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;">Sabes qué pasa en cada campo sin estar presente.</p>
+        </div>
+        <div class="bl5-res" style="position:relative;background:rgba(255,255,255,0.05);border:1px solid rgba(119,207,201,0.22);border-radius:16px;padding:20px 16px;text-align:center;cursor:default;transition:background 0.25s ease,border-color 0.25s ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(119,207,201,0.16);margin-bottom:12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          </span>
+          <h3 style="font-size:14px;font-weight:700;color:#FFFFFF;margin:0;">Capacitación del equipo</h3>
+          <p class="bl5-res-txt" style="font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;">Tu equipo aprende una metodología de trabajo, y el conocimiento queda en la empresa.</p>
+        </div>
+        <div class="bl5-res" style="position:relative;background:rgba(255,255,255,0.05);border:1px solid rgba(119,207,201,0.22);border-radius:16px;padding:20px 16px;text-align:center;cursor:default;transition:background 0.25s ease,border-color 0.25s ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(119,207,201,0.16);margin-bottom:12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 15l2 2 4-4"></path></svg>
+          </span>
+          <h3 style="font-size:14px;font-weight:700;color:#FFFFFF;margin:0;">Respaldo de lo realizado</h3>
+          <p class="bl5-res-txt" style="font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;">Historial exportable de cada riego y mantención.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section id="app" style="padding:100px 5% 70px;background:#FFFFFF;">
+    <div style="max-width:1150px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:60px;">
+        
+        <h2 style="font-size:clamp(26px,2.6vw,36px);font-weight:700;margin:14px auto 12px;max-width:600px;text-wrap:balance;">Del manómetro a la decisión.</h2>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.6;color:rgba(0,46,43,0.7);max-width:600px;margin:0 auto;">El <b>blumer mide y registra en la app </b>desde el sector. El responsable ve el historial y la alerta en la web, y actúa antes de que el problema crezca.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:-26px 0 54px;">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#002E2B;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:18px;padding:9px 16px;"><span style="width:7px;height:7px;border-radius:50%;background:#77CFC9;"></span>Manómetro en el bloque</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d6b64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#002E2B;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:18px;padding:9px 16px;"><span style="width:7px;height:7px;border-radius:50%;background:#77CFC9;"></span>Registro en la app</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d6b64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#002E2B;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:18px;padding:9px 16px;"><span style="width:7px;height:7px;border-radius:50%;background:#F64500;"></span>Historial y alerta</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d6b64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#FFFFFF;background:#002E2B;border-radius:18px;padding:9px 16px;">Acción del responsable</span>
+      </div>
+      <div class="bl4-app-row" style="display:flex;gap:60px;align-items:center;justify-content:center;">
+        <div style="flex:0 0 auto;">
+          <div style="width:270px;background:#0b0f0e;border-radius:34px;padding:10px;box-shadow:0 30px 70px -22px rgba(0,20,18,0.45);">
+            {{ appImageNode }}
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px;">
+            <button onClick="{{ appPrev }}" aria-label="Módulo anterior" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;border:1.5px solid #002E2B;color:#002E2B;cursor:pointer;transition:background 0.2s ease;" style-hover="background:#002E2B;color:#77CFC9;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.06em;color:#0d6b64;min-width:120px;text-align:center;">{{ appActiveLabel }}</span>
+            <button onClick="{{ appNext }}" aria-label="Módulo siguiente" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;border:1.5px solid #002E2B;color:#002E2B;cursor:pointer;transition:background 0.2s ease;" style-hover="background:#002E2B;color:#77CFC9;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div style="flex:0 1 520px;min-width:300px;display:flex;flex-direction:column;gap:14px;">
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;color:rgba(0,46,43,0.5);margin:0;">01 · REGISTRAR — EN TERRENO, DESDE LA APP</p>
+          <sc-for list="{{ appMenu }}" as="m" hint-placeholder-count="4">
+            <div onClick="{{ m.select }}" style="{{ m.cardStyle }}">
+              <div style="display:flex;gap:16px;align-items:flex-start;">
+                <div style="{{ m.iconBoxStyle }}">{{ m.icon }}</div>
+                <div>
+                  <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;color:#002E2B;">{{ m.title }}</h3>
+                  <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.6;color:rgba(0,46,43,0.7);margin:0;">{{ m.desc }}</p>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:34px 5%;background:#77CFC9;">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;">
+      <span style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#002E2B;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><circle cx="12" cy="20" r="1" fill="#77CFC9"></circle><path d="M2 2l20 20"></path></svg>
+      </span>
+      <p style="flex:1 1 420px;max-width:640px;font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.6;color:#002E2B;margin:0;"><strong>Funciona 100% offline.</strong> El operador registra mediciones y eventos en terreno sin internet — los datos se suben solos cuando vuelve la señal.</p>
+      <button onClick="{{ scrollToContact }}" style="flex:0 0 auto;background:#002E2B;color:#FFFFFF;border:none;border-radius:26px;padding:14px 28px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;" style-hover="background:#0d4a45;">Solicitar demo</button>
+    </div>
+  </section>
+
+  <section id="web" style="padding:70px 5% 100px;background:#FFFFFF;">
+    <div style="max-width:1150px;margin:0 auto;">
+      <div class="bl4-app-row" style="display:flex;gap:50px;align-items:center;justify-content:center;">
+        <div style="flex:0 1 420px;min-width:300px;display:flex;flex-direction:column;gap:10px;">
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;color:rgba(0,46,43,0.5);margin:0;">02 · VISIBILIZAR Y ACTUAR — EN LA WEB</p>
+          <sc-for list="{{ webMenu }}" as="w" hint-placeholder-count="5">
+            <div onClick="{{ w.select }}" style="{{ w.cardStyle }}">
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div style="{{ w.iconBoxStyle }}">{{ w.icon }}</div>
+                <div>
+                  <h3 style="font-size:15.5px;font-weight:700;margin:0 0 4px;color:#002E2B;">{{ w.title }}</h3>
+                  <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.55;color:rgba(0,46,43,0.7);margin:0;"><strong style="color:#0d6b64;">{{ w.highlight }}</strong> {{ w.desc }}</p>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="flex:0 1 620px;min-width:340px;">
+          {{ webImageNode }}
+          <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px;">
+            <button onClick="{{ webPrev }}" aria-label="Módulo anterior" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;border:1.5px solid #002E2B;color:#002E2B;cursor:pointer;transition:background 0.2s ease;" style-hover="background:#002E2B;color:#77CFC9;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.06em;color:#0d6b64;min-width:130px;text-align:center;">{{ webActiveLabel }}</span>
+            <button onClick="{{ webNext }}" aria-label="Módulo siguiente" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;border:1.5px solid #002E2B;color:#002E2B;cursor:pointer;transition:background 0.2s ease;" style-hover="background:#002E2B;color:#77CFC9;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="cifras" style="padding:70px 5% 30px;background:#FFFFFF;">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px;text-align:center;">
+      <div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:clamp(38px,4vw,54px);font-weight:700;color:#002E2B;">+{{ haNode }}</div>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:0.06em;color:rgba(0,46,43,0.6);margin:8px 0 0;">HECTÁREAS GESTIONADAS</p>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Sans',sans-serif;font-size:clamp(38px,4vw,54px);font-weight:700;color:#002E2B;">+{{ usersNode }}</div>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:0.06em;color:rgba(0,46,43,0.6);margin:8px 0 0;">USUARIOS ACTIVOS</p>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;">
+          <div style="font-family:'IBM Plex Sans',sans-serif;font-size:clamp(38px,4vw,54px);font-weight:700;color:#002E2B;">{{ countriesNode }}</div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <svg width="30" height="20" viewBox="0 0 30 20" style="border-radius:3px;box-shadow:0 1px 3px rgba(0,20,18,0.15);"><rect width="30" height="10" fill="#f2f0ec"></rect><rect y="10" width="30" height="10" fill="#cf8b8f"></rect><rect width="10" height="10" fill="#7d94b5"></rect><path d="M5 2.2l0.9 2.1 2.3 0.1-1.8 1.5 0.7 2.2L5 6.8 2.9 8.1l0.7-2.2-1.8-1.5 2.3-0.1z" fill="#f7f6f3"></path></svg>
+            <svg width="30" height="20" viewBox="0 0 30 20" style="border-radius:3px;box-shadow:0 1px 3px rgba(0,20,18,0.15);"><rect width="10" height="20" fill="#cf8b8f"></rect><rect x="10" width="10" height="20" fill="#f2f0ec"></rect><rect x="20" width="10" height="20" fill="#cf8b8f"></rect></svg>
+            <svg width="30" height="20" viewBox="0 0 30 20" style="border-radius:3px;box-shadow:0 1px 3px rgba(0,20,18,0.15);"><rect width="10" height="20" fill="#8fb59a"></rect><rect x="10" width="10" height="20" fill="#f2f0ec"></rect><rect x="20" width="10" height="20" fill="#cf8b8f"></rect><circle cx="15" cy="10" r="2.6" fill="#b0a48a"></circle></svg>
+          </div>
+        </div>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:0.06em;color:rgba(0,46,43,0.6);margin:8px 0 0;">PAÍSES · CHILE, PERÚ Y MÉXICO</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:50px 0 56px;background:#F4FAF9;border-top:1px solid rgba(0,46,43,0.06);border-bottom:1px solid rgba(0,46,43,0.06);overflow:hidden;">
+    <p style="text-align:center;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;color:#0d6b64;margin:0 0 28px;">CONFÍAN EN BLUM</p>
+    <div style="display:flex;width:max-content;gap:56px;align-items:center;animation:blumMarquee 32s linear infinite;">{{ logosRow }}</div>
+  </section>
+
+
+  <section id="empezar" style="padding:90px 5%;background:#F4FAF9;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:44px;">
+        <h2 style="font-size:clamp(26px,2.6vw,36px);font-weight:700;margin:0 0 10px;">Dos formas de empezar</h2>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.6;color:rgba(0,46,43,0.65);margin:0;">Sin transformar tu red de riego existente. Elige la que mejor se adapte a tu equipo y operación.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:26px;align-items:stretch;">
+        <div style="background:#FFFFFF;border:1px solid rgba(0,46,43,0.08);border-radius:22px;padding:40px 36px;display:flex;flex-direction:column;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:rgba(119,207,201,0.25);margin-bottom:22px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d6b64" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </span>
+          <h3 style="font-size:21px;font-weight:700;margin:0 0 12px;">Implementa BLUM tú mismo</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(0,46,43,0.72);margin:0 0 22px;">BLUM está diseñado para que quienes conocen su sistema de riego puedan <strong style="color:#002E2B;">implementarlo de forma autónoma</strong>, con un <strong style="color:#002E2B;">proceso guiado y amigable</strong>.</p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:#77CFC9;color:#002E2B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;">✓</span><span style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.55;color:rgba(0,46,43,0.78);">Requiere conocimiento básico de tu sistema de riego</span></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:#77CFC9;color:#002E2B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;">✓</span><span style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.55;color:rgba(0,46,43,0.78);">Proceso guiado paso a paso, sin instalaciones técnicas</span></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;"><span style="flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:#77CFC9;color:#002E2B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:2px;">✓</span><span style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.55;color:rgba(0,46,43,0.78);">Listo en menos de 30 minutos si tienes tu red clara</span></div>
+          </div>
+        </div>
+        <div style="background:#002E2B;border-radius:22px;padding:40px 36px;display:flex;flex-direction:column;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:rgba(119,207,201,0.18);margin-bottom:22px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </span>
+          <h3 style="font-size:21px;font-weight:700;color:#FFFFFF;margin:0 0 12px;">A través de nuestros Partners</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.78);margin:0 0 22px;">Si necesitas apoyo en terreno, nuestros partners certificados te acompañan en la implementación, configuración inicial y capacitación de tu equipo.</p>
+          <div style="margin-top:auto;background:rgba(255,255,255,0.06);border-radius:16px;padding:18px 20px;">
+            <div style="display:flex;gap:14px;align-items:center;margin-bottom:14px;">
+              <span style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,0.08);flex:0 0 auto;">
+                <img src="assets/logo-baumsystem-blanco.png" style="width:38px;height:38px;object-fit:contain;" alt="Baum System">
+              </span>
+              <div>
+                <p style="font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;color:#FFFFFF;margin:0;">Baum System</p>
+                <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:#77CFC9;margin:2px 0 0;">Partner certificado · Implementación y consultoría de riego</p>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:flex-end;">
+              <a href="https://www.baumsystem.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#77CFC9;color:#002E2B;border-radius:18px;padding:9px 18px;font-family:'Sora',sans-serif;font-size:12.5px;font-weight:700;" style-hover="background:#FFFFFF;color:#002E2B;">Contactar a Baum System ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <section id="planes" style="padding:90px 5%;background:#FFFFFF;">
+    <div style="max-width:1160px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:36px;">
+        <span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#0d6b64;">PRECIOS</span>
+        <h2 style="font-size:clamp(28px,3vw,42px);font-weight:700;margin:14px auto 12px;max-width:600px;text-wrap:balance;">Planes para cada operación</h2>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.6;color:rgba(0,46,43,0.7);max-width:580px;margin:0 auto 8px;">Sin costos ocultos. Todos los planes incluyen las mismas funcionalidades base.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.6;color:rgba(0,46,43,0.55);max-width:580px;margin:0 auto;">El precio se calcula por la superficie total gestionada en la plataforma — multicampo y multiempresa.</p>
+      </div>
+      <div style="display:flex;justify-content:center;margin-bottom:40px;">
+        <div style="display:inline-flex;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:20px;padding:4px;">
+          <button onClick="{{ setUSD }}" style="border:none;border-radius:16px;padding:8px 20px;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;background:{{ usdBtnBg }};color:{{ usdBtnColor }};">USD · Internacional</button>
+          <button onClick="{{ setUF }}" style="border:none;border-radius:16px;padding:8px 20px;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;background:{{ ufBtnBg }};color:{{ ufBtnColor }};">UF · Chile</button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch;">
+        <sc-for list="{{ plans }}" as="plan" hint-placeholder-count="4">
+          <div style="position:relative;background:#FFFFFF;border:{{ plan.border }};border-radius:22px;padding:38px 32px;box-shadow:0 4px 16px rgba(0,20,18,0.06);display:flex;flex-direction:column;">
+            <sc-if value="{{ plan.highlight }}" hint-placeholder-val="{{ false }}">
+              <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#002E2B;color:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:700;border-radius:16px;padding:6px 16px;white-space:nowrap;">Más elegido</span>
+            </sc-if>
+            <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#0d6b64;background:rgba(119,207,201,0.18);border-radius:16px;padding:7px 15px;margin-bottom:20px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d6b64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V9"></path><path d="M12 9C12 5 9 3 5 3c0 4 3 6 7 6z"></path><path d="M12 13c0-4 3-6 7-6 0 4-3 6-7 6z"></path></svg>
+              {{ plan.segment }}
+            </span>
+            <div style="font-size:17px;font-weight:700;margin-bottom:4px;">{{ plan.range }}</div>
+            <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:rgba(0,46,43,0.65);margin:0 0 20px;">{{ plan.desc }}</p>
+            <div style="display:flex;align-items:baseline;gap:8px;">
+              <span style="font-family:'Sora',sans-serif;font-size:40px;font-weight:700;white-space:nowrap;letter-spacing:-0.02em;">{{ plan.price }}</span>
+              <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(0,46,43,0.6);">{{ plan.unit }}</span>
+            </div>
+            <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:rgba(0,46,43,0.55);margin:6px 0 24px;">{{ plan.example }}</p>
+            <button onClick="{{ scrollToContact }}" style="align-self:flex-start;background:{{ plan.btnBg }};color:{{ plan.btnColor }};border:{{ plan.btnBorder }};border-radius:26px;padding:14px 30px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;transition:opacity 0.2s ease,background 0.2s ease;" style-hover="opacity:0.88;">{{ plan.cta }}</button>
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px;">
+              <sc-for list="{{ plan.features }}" as="f" hint-placeholder-count="3">
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <span style="flex:0 0 auto;width:19px;height:19px;border-radius:50%;background:#77CFC9;color:#002E2B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px;">✓</span>
+                  <span style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.5;color:rgba(0,46,43,0.78);">{{ f }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      
+      <p style="text-align:center;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:rgba(0,46,43,0.5);margin:10px auto 0;max-width:640px;">* Blum se integra con la tecnología que ya usas (programadores de riego, sensores, NDVI). La conexión vía API tiene un costo adicional por cotizar, disponible desde el plan Productor mediano.</p>
+    </div>
+  </section>
+
+  <section id="contacto" style="position:relative;padding:110px 5%;overflow:hidden;background-image:url('assets/foto-dos-personas-campo.jpg');background-size:cover;background-position:75% 50%;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,46,43,0.94) 0%,rgba(0,46,43,0.75) 40%,rgba(0,46,43,0.4) 75%,rgba(0,46,43,0.25) 100%);"></div>
+    <img src="assets/patron-topografico.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.1;mix-blend-mode:screen;" alt="">
+    <div style="position:relative;max-width:1100px;margin:0 auto;display:flex;gap:60px;flex-wrap:wrap;align-items:center;">
+      <div style="flex:1 1 380px;min-width:280px;">
+        <span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#77CFC9;">HABLEMOS DE TU CAMPO</span>
+        <h2 style="font-size:clamp(28px,3vw,40px);font-weight:700;color:#FFFFFF;margin:14px 0 14px;text-wrap:balance;">Agenda una demo de 30 minutos.</h2>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0 0 26px;max-width:420px;">Enterarse tarde cuesta caro. Completa tus datos y <strong style="color:#FFFFFF;">te contactamos en menos de 48 horas</strong>. Te mostramos la plataforma con <strong style="color:#FFFFFF;">datos reales de riego, sin compromiso</strong>.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://wa.me/56900000000" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#77CFC9;color:#002E2B;border-radius:26px;padding:14px 26px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;" style-hover="background:#FFFFFF;color:#002E2B;">WhatsApp</a>
+          <a href="mailto:contacto@blum.cl" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#FFFFFF;border:1.5px solid rgba(255,255,255,0.6);border-radius:26px;padding:13px 26px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:600;" style-hover="background:rgba(255,255,255,0.12);color:#FFFFFF;">contacto@blum.cl</a>
+        </div>
+      </div>
+      <div style="flex:1 1 420px;min-width:320px;background:#FFFFFF;border-radius:20px;padding:34px 32px;box-shadow:0 30px 70px -24px rgba(0,0,0,0.55);">
+        <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.6;color:#0d6b64;font-weight:600;margin:0;text-align:center;padding:40px 0;">Gracias — nuestro equipo te contactará en menos de 48 horas.</p>
+        </sc-if>
+        <sc-if value="{{ formNotSent }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <input placeholder="Nombre" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;padding:13px 16px;border:1px solid rgba(0,46,43,0.2);border-radius:10px;outline:none;" id="bl5-nombre">
+            <input placeholder="Empresa" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;padding:13px 16px;border:1px solid rgba(0,46,43,0.2);border-radius:10px;outline:none;" id="bl5-empresa">
+            <input placeholder="Email" type="email" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;padding:13px 16px;border:1px solid rgba(0,46,43,0.2);border-radius:10px;outline:none;" id="bl5-email">
+            <input placeholder="Hectáreas gestionadas" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;padding:13px 16px;border:1px solid rgba(0,46,43,0.2);border-radius:10px;outline:none;" id="bl5-ha">
+            <textarea placeholder="Cuéntanos sobre tu campo" rows="4" style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;padding:13px 16px;border:1px solid rgba(0,46,43,0.2);border-radius:10px;outline:none;resize:vertical;"></textarea>
+            <button onClick="{{ sendForm }}" style="background:linear-gradient(90deg,#F64500 0%,#77CFC9 55%,#002E2B 100%);color:#FFFFFF;border:none;border-radius:26px;padding:15px;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:opacity 0.2s ease;" style-hover="opacity:0.9;">Enviar solicitud</button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#002E2B;padding:60px 5% 44px;">
+    <div style="max-width:1100px;margin:0 auto 44px;display:grid;grid-template-columns:minmax(240px,1.5fr) repeat(3,minmax(150px,1fr));gap:40px;align-items:start;">
+      <div>
+        <img src="assets/logo-07.png" style="height:34px;display:block;margin-bottom:16px;" alt="blum">
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,0.6);margin:0 0 18px;max-width:280px;">App de registro de mediciones y eventos de los equipos de riego. Datos de terreno · Riego registrable.</p>
+        <a href="#contacto" style="display:inline-block;font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:#002E2B;background:#77CFC9;border-radius:22px;padding:10px 22px;" style-hover="background:#FFFFFF;color:#002E2B;">Agenda una demo</a>
+      </div>
+      <div>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#77CFC9;margin:0 0 14px;">PLATAFORMA</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="#metodo" style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);" style-hover="color:#77CFC9;">Cómo funciona</a>
+          <a href="#funcionalidades" style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);" style-hover="color:#77CFC9;">Funcionalidades</a>
+          <a href="#plataforma" style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);" style-hover="color:#77CFC9;">App y Web</a>
+          <a href="#precios" style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);" style-hover="color:#77CFC9;">Planes</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#77CFC9;margin:0 0 14px;">EMPRESA</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="#contacto" style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);" style-hover="color:#77CFC9;">Agenda una demo</a>
+          <a href="#contacto" style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);" style-hover="color:#77CFC9;">Contacto</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#77CFC9;margin:0 0 14px;">DESCARGA LA APP</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);" style-hover="color:#77CFC9;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-1-1.94.03-3.72 1.13-4.72 2.86-2.01 3.49-.51 8.66 1.45 11.49.96 1.39 2.1 2.94 3.6 2.88 1.45-.06 1.99-.93 3.74-.93s2.24.93 3.77.9c1.56-.03 2.54-1.41 3.49-2.8 1.1-1.61 1.55-3.17 1.58-3.25-.04-.02-3.03-1.16-3.06-4.59z"></path></svg>App Store</a>
+          <a href="https://play.google.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);" style-hover="color:#77CFC9;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3.06 1.24 12.9 11.08 3.06 20.92A2.01 2.01 0 0 1 3 20.5v-17c0-.15.02-.29.06-.26zM13.96 12.14l2.6 2.6-9.6 5.46c-.44.25-.9.3-1.3.16l8.3-8.22zM17.9 9.9l2.5 1.42c1.1.62 1.1 1.74 0 2.36l-2.5 1.42-2.88-2.6 2.88-2.6zM5.66 1.64c.4-.14.86-.09 1.3.16l9.6 5.46-2.6 2.6-8.3-8.22z"></path></svg>Google Play</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.12);padding-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:rgba(255,255,255,0.55);margin:0;">© 2026 BLUM — Un producto de Baum System</p>
+      <div style="display:flex;gap:14px;align-items:center;">
+        <a href="https://www.instagram.com/blum.riego" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(119,207,201,0.4);color:#77CFC9;" style-hover="background:rgba(119,207,201,0.15);color:#FFFFFF;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"></circle></svg>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(119,207,201,0.4);color:#77CFC9;" style-hover="background:rgba(119,207,201,0.15);color:#FFFFFF;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.17V23H8V8z"></path></svg>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(119,207,201,0.4);color:#77CFC9;" style-hover="background:rgba(119,207,201,0.15);color:#FFFFFF;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
+class Component extends DCLogic {
+  state = { currency: 'USD', activeApp: 0, activeWeb: 0, sent: false, stageOn: false };
+
+  renderVals() {
+    if (!this._CountUp) {
+      const R = React;
+      this._CountUp = class extends R.Component {
+        constructor(p) { super(p); this.state = {v: 0}; }
+        componentDidMount() {
+          const dur = 1600, target = this.props.target;
+          this._t = setInterval(() => {
+            const el = this._el;
+            if (!el) return;
+            const r = el.getBoundingClientRect();
+            const visible = r.top < window.innerHeight * 0.9 && r.bottom > 0;
+            if (!visible) {
+              if (this._t0) { this._t0 = null; this.setState({v: 0}); }
+              return;
+            }
+            if (!this._t0) this._t0 = performance.now();
+            const p = Math.min(1, (performance.now() - this._t0) / dur);
+            if (p >= 1) return;
+            const e = 1 - Math.pow(1 - p, 3);
+            this.setState({v: Math.round(target * e)});
+            if (p + 0.1 >= 1) this.setState({v: target});
+          }, 100);
+        }
+        componentWillUnmount() { if (this._t) clearInterval(this._t); }
+        render() {
+          return R.createElement('span', {ref: el => this._el = el}, this.state.v.toLocaleString('es-CL'));
+        }
+      };
+      const owner = this;
+      this._Watcher = class extends R.Component {
+        componentDidMount() {
+          this._t = setInterval(() => {
+            const el = document.getElementById('metodo');
+            if (!el) return;
+            const r = el.getBoundingClientRect();
+            const vis = r.top < window.innerHeight * 0.78 && r.bottom > window.innerHeight * 0.15;
+            if (vis !== owner.state.stageOn) owner.setState({stageOn: vis});
+          }, 250);
+        }
+        componentWillUnmount() { if (this._t) clearInterval(this._t); }
+        render() { return null; }
+      };
+      this._stageWatcherNode = R.createElement(this._Watcher, {key: 'sw'});
+      this._haNode = R.createElement(this._CountUp, {key: 'ha', target: 12000});
+      this._usersNode = R.createElement(this._CountUp, {key: 'us', target: 400});
+      this._countriesNode = R.createElement(this._CountUp, {key: 'co', target: 3});
+    }
+    const logos = [
+      {src:"assets/logo-garces-clean.png",alt:"Garcés"},
+      {src:"assets/logo-frutexsa-clean.png",alt:"Frutexsa"},
+      {src:"assets/logo-bafar-clean.png",alt:"Bafar"},
+      {src:"assets/logo-ddc-clean.png",alt:"DDC"},
+      {src:"assets/logo-leice-clean.png",alt:"Leice"},
+      {src:"assets/logo-principio-clean.png",alt:"Principio"},
+      {src:"assets/logo-agrosocoin-clean.png",alt:"Agrosocoin"},
+      {src:"assets/logo-exser-clean.png",alt:"Exser"},
+      {src:"assets/logo-aillin-clean.png",alt:"Aillin"},
+    ];
+    if (!this._logosRow) {
+      const sizes = {Bafar: 96, DDC: 110, Leice: 78, 'Garcés': 78, Frutexsa: 78};
+      this._logosRow = [...logos, ...logos].map((lg, i) => {
+        const k = Object.keys(sizes).find(b => lg.alt.includes(b));
+        return React.createElement('img', {key: i, src: lg.src, alt: lg.alt, style: {height: k ? sizes[k] : 56, objectFit: 'contain'}});
+      });
+    }
+    const appScreens = [
+      { title: 'Mapa', desc: 'Ve tus sectores, válvulas y equipos sobre el mapa real del campo. Detecta anomalías sin caminar el campo entero.', img: 'assets/mock-app-mapa.png',
+        icon: 'M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z' },
+      { title: 'Medir', desc: 'Registra caudal, presión y estado de cada equipo directo en terreno, con foto incluida. Funciona 100% offline.', img: 'assets/mock-app-medicion.png',
+        icon: 'M12 8v4l3 3 M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z' },
+      { title: 'Historial de activos', desc: 'Cada activo con su hoja de vida completa: mediciones, eventos y documentos, accesibles desde tu ubicación.', img: 'assets/mock-app-detalle.png',
+        icon: 'M3 3v18h18 M7 14l4-4 3 3 5-6' },
+      { title: 'Calendario', desc: 'Visitas, tareas y mantenciones programadas por día. Todo el trabajo del campo agendado y visible para el equipo.', img: 'assets/app-calendario.png',
+        icon: 'M8 2v4 M16 2v4 M3 8h18 M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z' },
+    ];
+    const active = this.state.activeApp;
+    const appMenu = appScreens.map((s, i) => {
+      const on = i === active;
+      return {
+        title: s.title, desc: s.desc,
+        select: () => this.setState({activeApp: i}),
+        cardStyle: 'cursor:pointer;border-radius:18px;padding:20px 22px;transition:background 0.25s ease,border-color 0.25s ease;' +
+          (on ? 'background:#F4FAF9;border:1.5px solid #77CFC9;box-shadow:0 8px 24px -12px rgba(0,46,43,0.25);'
+              : 'background:#FFFFFF;border:1px solid rgba(0,46,43,0.1);'),
+        iconBoxStyle: 'flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;' +
+          (on ? 'background:#002E2B;' : 'background:rgba(119,207,201,0.15);'),
+        icon: React.createElement('svg', {width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none', stroke: on ? '#77CFC9' : '#0d6b64', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round', key: 'ai' + i},
+          s.icon.split(' M').map((d, j) => React.createElement('path', {d: j === 0 ? d : 'M' + d, key: j}))),
+      };
+    });
+    const webScreens = [
+      { title: 'Mapa', highlight: 'Mirada visual real', desc: 'de los equipos, sectores, válvulas y activos del riego.', img: 'assets/web-mapa.png',
+        icon: 'M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z' },
+      { title: 'Activos', highlight: 'Inventario completo', desc: 'de marcas, modelos y especificaciones de tus equipos.', img: 'assets/web-sectores.png',
+        icon: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' },
+      { title: 'Timeline', highlight: 'Trazabilidad total', desc: 'de mediciones, eventos y trabajo de tu equipo en terreno.', img: 'assets/web-dash-eventos.png',
+        icon: 'M12 8v4l3 3 M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z' },
+      { title: 'Plan de Riego', highlight: 'Compara real vs teórico', desc: 'en base a precipitaciones reales y datos del sistema.', img: 'assets/web-plan-riego.png',
+        icon: 'M3 3v18h18 M7 14l4-4 3 3 5-6' },
+      { title: 'Dashboard', highlight: 'Alertas en tiempo real', desc: 'para tomar decisiones rápidas y revisar la operación.', img: 'assets/web-dash-mediciones.png',
+        icon: 'M13 2 3 14h8l-1 8 10-12h-8l1-8z' },
+    ];
+    const activeW = this.state.activeWeb;
+    const webMenu = webScreens.map((s, i) => {
+      const on = i === activeW;
+      return {
+        title: s.title, highlight: s.highlight, desc: s.desc,
+        select: () => this.setState({activeWeb: i}),
+        cardStyle: 'cursor:pointer;border-radius:16px;padding:14px 18px;transition:background 0.25s ease,border-color 0.25s ease;' +
+          (on ? 'background:#F4FAF9;border:1.5px solid #77CFC9;box-shadow:0 8px 24px -12px rgba(0,46,43,0.25);'
+              : 'background:#FFFFFF;border:1px solid rgba(0,46,43,0.1);'),
+        iconBoxStyle: 'flex:0 0 auto;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;' +
+          (on ? 'background:#002E2B;' : 'background:rgba(119,207,201,0.15);'),
+        icon: React.createElement('svg', {width: 19, height: 19, viewBox: '0 0 24 24', fill: 'none', stroke: on ? '#77CFC9' : '#0d6b64', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round', key: 'wi' + i},
+          s.icon.split(' M').map((d, j) => React.createElement('path', {d: j === 0 ? d : 'M' + d, key: j}))),
+      };
+    });
+    const cur = this.state.currency;
+    const isUF = cur === 'UF';
+    const plansData = [
+      { segment: 'Pequeño productor', range: '1 – 99 ha', desc: 'Para predios y campos en crecimiento.',
+        priceUF: '0,7 UF', priceUSD: '$25', unitUF: '/ ha / año', unitUSD: 'USD / ha / año',
+        exUF: 'Ej. 50 ha → 35 UF/año', exUSD: 'Ej. 50 ha → $1.250 USD/año',
+        highlight: false, cta: 'Solicitar acceso',
+        features: ['Todas las funcionalidades incluidas', 'Usuarios ilimitados', 'Soporte remoto'] },
+      { segment: 'Productor mediano', range: '100 – 299 ha', desc: 'Para operaciones en pleno desarrollo.',
+        priceUF: '0,42 UF', priceUSD: '$15', unitUF: '/ ha / año', unitUSD: 'USD / ha / año',
+        exUF: 'Ej. 200 ha → 84 UF/año', exUSD: 'Ej. 200 ha → $3.000 USD/año',
+        highlight: false, cta: 'Solicitar acceso',
+        features: ['Todas las funcionalidades incluidas', 'Usuarios ilimitados', 'Soporte prioritario', 'Onboarding asistido'] },
+      { segment: 'Productor grande', range: '300 – 999 ha', desc: 'Para operaciones consolidadas.',
+        priceUF: '0,33 UF', priceUSD: '$12', unitUF: '/ ha / año', unitUSD: 'USD / ha / año',
+        exUF: 'Ej. 500 ha → 165 UF/año', exUSD: 'Ej. 500 ha → $6.000 USD/año',
+        highlight: true, cta: 'Solicitar acceso',
+        features: ['Todas las funcionalidades incluidas', 'Usuarios ilimitados', 'Soporte prioritario', 'Onboarding asistido'] },
+      { segment: 'Multicampo', range: '1.000+ ha', desc: 'Para grandes operaciones multicampo.',
+        priceUF: '0,25 UF', priceUSD: '$9,5', unitUF: '/ ha / año', unitUSD: 'USD / ha / año',
+        exUF: 'Ej. 2.000 ha → 500 UF/año', exUSD: 'Ej. 2.000 ha → $19.000 USD/año',
+        highlight: false, cta: 'Contactar ventas',
+        features: ['Todas las funcionalidades incluidas', 'Usuarios ilimitados', 'Account manager dedicado', 'SLA garantizado'] },
+    ];
+    const plans = plansData.map(p => ({
+      segment: p.segment, range: p.range, desc: p.desc, highlight: p.highlight, cta: p.cta, features: p.features,
+      price: isUF ? p.priceUF : p.priceUSD, unit: isUF ? p.unitUF : p.unitUSD, example: isUF ? p.exUF : p.exUSD,
+      border: p.highlight ? '2px solid #002E2B' : '1px solid rgba(0,46,43,0.1)',
+      btnBg: p.highlight ? 'linear-gradient(90deg,#F64500 0%,#77CFC9 60%,#002E2B 100%)' : 'transparent',
+      btnColor: p.highlight ? '#FFFFFF' : '#002E2B',
+      btnBorder: p.highlight ? 'none' : '1.5px solid rgba(0,46,43,0.35)',
+      btnWidth: p.highlight ? 'auto' : 'auto',
+    }));
+    const go = id => () => { const el = document.getElementById(id); if (el) window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 70, behavior: "smooth"}); };
+    return {
+      plans, appMenu, webMenu,
+      appPrev: () => this.setState({activeApp: (active - 1 + appScreens.length) % appScreens.length}),
+      appNext: () => this.setState({activeApp: (active + 1) % appScreens.length}),
+      appActiveLabel: appScreens[active].title,
+      appImageNode: React.createElement('img', {src: appScreens[active].img, alt: 'App BLUM', style: {width: '100%', height: 540, objectFit: 'cover', borderRadius: 26, display: 'block', background: '#002E2B'}}),
+      webPrev: () => this.setState({activeWeb: (activeW - 1 + webScreens.length) % webScreens.length}),
+      webNext: () => this.setState({activeWeb: (activeW + 1) % webScreens.length}),
+      webActiveLabel: webScreens[activeW].title,
+      webImageNode: React.createElement('img', {src: webScreens[activeW].img, alt: 'Plataforma web BLUM', style: {width: '100%', aspectRatio: '1.77/1', objectFit: 'cover', objectPosition: 'top center', display: 'block', borderRadius: 16, border: '1px solid rgba(0,46,43,0.1)', boxShadow: '0 24px 55px -20px rgba(0,20,18,0.35)', background: '#F4FAF9'}}),
+      stageWatcher: this._stageWatcherNode,
+      stageOp: this.state.stageOn ? '1' : '0',
+      stageY: this.state.stageOn ? '0px' : '26px',
+      haNode: this._haNode,
+      usersNode: this._usersNode,
+      countriesNode: this._countriesNode,
+      logosRow: this._logosRow,
+      formSent: this.state.sent,
+      formNotSent: !this.state.sent,
+      sendForm: () => this.setState({sent: true}),
+      setUF: () => this.setState({currency: 'UF'}),
+      setUSD: () => this.setState({currency: 'USD'}),
+      ufBtnBg: isUF ? '#002E2B' : 'transparent', ufBtnColor: isUF ? '#FFFFFF' : '#002E2B',
+      usdBtnBg: isUF ? 'transparent' : '#002E2B', usdBtnColor: isUF ? '#002E2B' : '#FFFFFF',
+      scrollToTop: () => window.scrollTo({top:0,behavior:"smooth"}),
+      scrollToContact: go("contacto"),
+      scrollToMetodo: go("metodo"),
+      scrollToProblema: go("problema"),
+    };
+  }
+}
+</script>
+</body>
+</html>
