@@ -216,11 +216,6 @@
         "title": "Enlace Google Play"
       },
       {
-        "name": "heroScrollLabel",
-        "type": "string",
-        "title": "Texto del indicador inferior"
-      },
-      {
         "name": "problemaEyebrow",
         "type": "string",
         "title": "Etiqueta"
