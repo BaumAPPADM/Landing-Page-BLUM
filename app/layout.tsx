@@ -1,0 +1,28 @@
+import type { Metadata } from 'next';
+import './globals.css';
+import './hover.css';
+import { getLanding } from '@/sanity/queries';
+import { urlFor } from '@/sanity/image';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const d = await getLanding();
+  const title = d?.seoTitle || 'BLUM · Software de riego: registro de medición y eventos';
+  const description =
+    d?.seoDescription ||
+    'BLUM centraliza las mediciones y eventos que tu equipo registra en terreno, y te entrega alertas y tendencias para actuar antes de que las fallas afecten el cultivo.';
+  const og = urlFor(d?.ogImage);
+  return {
+    title,
+    description,
+    openGraph: { title, description, type: 'website', ...(og ? { images: [og] } : {}) },
+    icons: { icon: '/assets/isotipo-nave.png' },
+  };
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="es">
+      <body>{children}</body>
+    </html>
+  );
+}

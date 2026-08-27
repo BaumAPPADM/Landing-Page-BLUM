@@ -1,0 +1,27 @@
+{
+  "name": "blum-landing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "sanity": "6.11.0",
+    "next-sanity": "13.3.3",
+    "@sanity/vision": "6.11.0",
+    "@sanity/image-url": "2.1.1",
+    "styled-components": "6.5.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
+  }
+}
