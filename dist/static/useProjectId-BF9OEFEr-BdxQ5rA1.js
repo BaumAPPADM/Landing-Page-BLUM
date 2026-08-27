@@ -1,1 +1,0 @@
-import{u as e}from"./dist-Cbchiysn.js";function t(){return e().projectId}export{t};

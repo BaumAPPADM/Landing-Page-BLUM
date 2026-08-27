@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-08-27T17:09:42.118Z",
+  "createdAt": "2026-08-27T17:46:09.443Z",
   "studioVersion": "6.11.0",
   "version": 3,
   "workspaces": [
@@ -15,7 +15,7 @@
       "projectId": "rfkrnrkt",
       "schema": "5c9c7562.create-schema.json",
       "title": "BLUM · Contenido",
-      "tools": "ef87c8fe.create-tools.json"
+      "tools": "7e62c866.create-tools.json"
     }
   ]
 }

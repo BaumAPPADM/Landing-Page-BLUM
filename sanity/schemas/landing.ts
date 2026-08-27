@@ -51,7 +51,6 @@ export const landing = defineType({
     f('heroImageAlt', 'Texto alternativo de la imagen', 'string', 'hero'),
     f('appStoreUrl', 'Enlace App Store', 'url', 'hero'),
     f('playStoreUrl', 'Enlace Google Play', 'url', 'hero'),
-    f('heroScrollLabel', 'Texto del indicador inferior', 'string', 'hero'),
 
     // ---------- Problema ----------
     f('problemaEyebrow', 'Etiqueta', 'string', 'problema'),

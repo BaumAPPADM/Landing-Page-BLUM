@@ -1,0 +1,1 @@
+import{u as e}from"./dist-DhanRkQk.js";function t(){return e().projectId}export{t};

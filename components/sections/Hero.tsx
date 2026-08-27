@@ -7,11 +7,13 @@ export default function Hero(p: any) {
   const { d } = p;
   const { scrollToContact, scrollToMetodo } = p;
   return (
-    <section style={s("position:relative;display:flex;flex-direction:column;padding:0 0 26px;box-sizing:border-box;overflow:hidden;background:linear-gradient(170deg,#0a3f3a 0%,#062e2a 60%,#04241f 100%);")}>
-      <div className="bl5-hero-wrap" style={s("position:relative;width:100%;min-height:620px;display:flex;align-items:center;padding:116px 5% 70px;box-sizing:border-box;")}>
-        <img className="bl5-hero-img" src={urlFor(d?.heroImage) || "/assets/hero-terreno-oficina.png"} style={s("position:absolute;right:0;top:0;height:100%;width:62%;object-fit:cover;object-position:center;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%);opacity:1;")} alt="Del terreno a la oficina: operador midiendo en el campo y gerente viendo los datos en BLUM" />
+    <section style={s("position:relative;display:flex;flex-direction:column;padding:0;box-sizing:border-box;overflow:hidden;background:linear-gradient(170deg,#0a3f3a 0%,#062e2a 60%,#04241f 100%);")}>
+      <div className="bl5-hero-wrap" style={s("position:relative;width:100%;min-height:700px;display:flex;align-items:center;padding:116px 5% 70px;box-sizing:border-box;")}>
+        <img className="bl5-hero-img" src={urlFor(d?.heroImage) || "/assets/hero-terreno-oficina-v2.png"} style={s("position:absolute;right:0;bottom:0;width:85%;height:auto;max-height:none;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,0.55) 8%,#000 18%,#000 100%),linear-gradient(180deg,#000 0%,#000 68%,rgba(0,0,0,0.4) 88%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,0.55) 8%,#000 18%,#000 100%),linear-gradient(180deg,#000 0%,#000 68%,rgba(0,0,0,0.4) 88%,transparent 100%);mask-composite:intersect;opacity:1;")} alt="Del terreno a la oficina: operador midiendo en el campo y gerente viendo los datos en BLUM" />
         {" "}
-        <div className="bl5-hero-scrim" style={s("position:absolute;left:0;top:0;height:100%;width:44%;background:linear-gradient(90deg,#062e2a 0%,rgba(6,46,42,0.7) 65%,rgba(6,46,42,0) 100%);")}></div>
+        <div style={s("position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(180deg,rgba(4,36,31,0) 0%,rgba(4,36,31,0.15) 55%,rgba(4,36,31,0.5) 100%);pointer-events:none;")}></div>
+        {" "}
+        <div className="bl5-hero-scrim" style={s("position:absolute;left:0;top:0;height:100%;width:36%;background:linear-gradient(90deg,#062e2a 0%,rgba(6,46,42,0.55) 55%,rgba(6,46,42,0) 100%);")}></div>
         {" "}
         <div className="bl5-hero-copy" style={s("position:relative;max-width:460px;width:42%;text-align:left;")}>
           <span style={s("display:inline-block;font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#CFF3F0;background:rgba(119,207,201,0.14);border-radius:20px;padding:8px 16px;margin-bottom:18px;")}>
@@ -55,7 +57,7 @@ export default function Hero(p: any) {
           </p>
         </div>
         {" "}
-        <div className="bl5-hero-badges" style={s("position:absolute;left:5%;right:34px;bottom:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;")}>
+        <div className="bl5-hero-badges" style={s("position:absolute;left:5%;right:34px;bottom:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;z-index:3;")}>
           <button className="bh7" onClick={scrollToContact} style={s("background:#77CFC9;color:#002E2B;border:none;border-radius:28px;padding:16px 34px;font-family:'Sora',sans-serif;font-size:15.5px;font-weight:700;cursor:pointer;box-shadow:0 12px 30px -10px rgba(119,207,201,0.5);transition:transform 0.2s ease;")}>
             {d?.heroCtaPrimary || "Agenda una demo"}
           </button>
@@ -104,19 +106,7 @@ export default function Hero(p: any) {
         </div>
       </div>
       {" "}
-      <div onClick={scrollToMetodo} style={s("position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:22px;cursor:pointer;")}>
-        <span style={s("font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;color:#FFFFFF;background:rgba(4,42,38,0.6);border-radius:14px;padding:5px 12px;")}>
-          {d?.heroScrollLabel || "DESCUBRE CÓMO FUNCIONA"}
-        </span>
-        {" "}
-        <span style={s("display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(119,207,201,0.7);background:rgba(4,42,38,0.6);")}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M6 9l6 6 6-6"></path>
-          </svg>
-        </span>
-      </div>
-      {" "}
-      <div style={s("position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,#FFFFFF 100%);pointer-events:none;")}></div>
+      <div style={s("position:relative;height:170px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.04) 45%,rgba(255,255,255,0.35) 78%,#FFFFFF 100%);pointer-events:none;margin-top:-60px;z-index:2;")}></div>
     </section>
   );
 }
