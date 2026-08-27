@@ -10,7 +10,7 @@ export default function WebSection(p: any) {
         <div className="bl4-app-row" style={s("display:flex;gap:50px;align-items:center;justify-content:center;")}>
           <div style={s("flex:0 1 420px;min-width:300px;display:flex;flex-direction:column;gap:10px;")}>
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;color:rgba(0,46,43,0.5);margin:0;")}>
-              {"02 · VISIBILIZAR Y ACTUAR — EN LA WEB"}
+              {d?.webEyebrow || "02 · VISIBILIZAR Y ACTUAR — EN LA WEB"}
             </p>
             {" "}
             {(webMenu || []).map((w, i) => (

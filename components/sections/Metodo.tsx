@@ -1,5 +1,6 @@
 import React from "react";
 import { s } from "@/lib/css";
+import RichText from "@/components/RichText";
 
 export default function Metodo(p: any) {
   const { d } = p;
@@ -9,7 +10,7 @@ export default function Metodo(p: any) {
       <img src="/assets/patron-topografico.png" style={s("position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.09;mix-blend-mode:screen;")} alt="" />
       {" "}
       <span style={s("font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#77CFC9;")}>
-        {"LA SOLUCIÓN · MÉTODO BLUM"}
+        {d?.metodoEyebrow || "LA SOLUCIÓN · MÉTODO BLUM"}
       </span>
       <div style={s("position:relative;max-width:1150px;margin:0 auto;")}>
         <div style={s("text-align:center;margin-bottom:56px;")}>
@@ -19,27 +20,33 @@ export default function Metodo(p: any) {
         <div style={s("display:flex;gap:8px;align-items:stretch;flex-wrap:wrap;margin-bottom:44px;")}>
           <div style={s("flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:{{ stageOp }};transform:translateY({{ stageY }});transition:opacity 0.75s ease 0s,transform 0.75s ease 0s;")}>
             <span style={s("display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#77CFC9;color:#002E2B;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;")}>
-              {"01"}
+              {d?.metodoStages?.[0]?.num || "01"}
             </span>
             {" "}
             <h3 style={s("font-size:20px;font-weight:700;color:#FFFFFF;margin:0 0 6px;")}>
-              {"Registrar"}
+              {d?.metodoStages?.[0]?.title || "Registrar"}
             </h3>
             {" "}
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#77CFC9;margin:0 0 12px;")}>
-              {"LA OPERACIÓN REAL"}
+              {d?.metodoStages?.[0]?.subtitle || "LA OPERACIÓN REAL"}
             </p>
             {" "}
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0;")}>
-              {"El equipo documenta "}
-              <strong style={s("color:#FFFFFF;")}>
-                {"mediciones, fallas, fotografías y eventos desde el celular"}
-              </strong>
-              {". Cada registro queda asociado a una persona, fecha, ubicación y equipo, "}
-              <strong style={s("color:#FFFFFF;")}>
-                {"incluso sin conexión"}
-              </strong>
-              {"."}
+              {d?.metodoStages?.[0]?.desc?.length ? (
+                <RichText value={d.metodoStages[0].desc} strongColor="#FFFFFF" />
+              ) : (
+                <>
+                {"El equipo documenta "}
+                <strong style={s("color:#FFFFFF;")}>
+                  {"mediciones, fallas, fotografías y eventos desde el celular"}
+                </strong>
+                {". Cada registro queda asociado a una persona, fecha, ubicación y equipo, "}
+                <strong style={s("color:#FFFFFF;")}>
+                  {"incluso sin conexión"}
+                </strong>
+                {"."}
+                </>
+              )}
             </p>
           </div>
           {" "}
@@ -58,27 +65,33 @@ export default function Metodo(p: any) {
           {" "}
           <div style={s("flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:{{ stageOp }};transform:translateY({{ stageY }});transition:opacity 0.75s ease 0.7s,transform 0.75s ease 0.7s;")}>
             <span style={s("display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#77CFC9;color:#002E2B;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;")}>
-              {"02"}
+              {d?.metodoStages?.[1]?.num || "02"}
             </span>
             {" "}
             <h3 style={s("font-size:20px;font-weight:700;color:#FFFFFF;margin:0 0 6px;")}>
-              {"Visibilizar"}
+              {d?.metodoStages?.[1]?.title || "Visibilizar"}
             </h3>
             {" "}
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#77CFC9;margin:0 0 12px;")}>
-              {"LO QUE REQUIERE ATENCIÓN"}
+              {d?.metodoStages?.[1]?.subtitle || "LO QUE REQUIERE ATENCIÓN"}
             </p>
             {" "}
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0;")}>
-              {"Blum organiza los registros en "}
-              <strong style={s("color:#FFFFFF;")}>
-                {"historial, mapas, comparaciones y alertas"}
-              </strong>
-              {". No se limita a mostrar datos: "}
-              <strong style={s("color:#FFFFFF;")}>
-                {"identifica desviaciones, tendencias y prioridades"}
-              </strong>
-              {"."}
+              {d?.metodoStages?.[1]?.desc?.length ? (
+                <RichText value={d.metodoStages[1].desc} strongColor="#FFFFFF" />
+              ) : (
+                <>
+                {"Blum organiza los registros en "}
+                <strong style={s("color:#FFFFFF;")}>
+                  {"historial, mapas, comparaciones y alertas"}
+                </strong>
+                {". No se limita a mostrar datos: "}
+                <strong style={s("color:#FFFFFF;")}>
+                  {"identifica desviaciones, tendencias y prioridades"}
+                </strong>
+                {"."}
+                </>
+              )}
             </p>
           </div>
           {" "}
@@ -97,34 +110,40 @@ export default function Metodo(p: any) {
           {" "}
           <div style={s("flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:{{ stageOp }};transform:translateY({{ stageY }});transition:opacity 0.75s ease 1.4s,transform 0.75s ease 1.4s;")}>
             <span style={s("display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#77CFC9;color:#002E2B;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;")}>
-              {"03"}
+              {d?.metodoStages?.[2]?.num || "03"}
             </span>
             {" "}
             <h3 style={s("font-size:20px;font-weight:700;color:#FFFFFF;margin:0 0 6px;")}>
-              {"Actuar"}
+              {d?.metodoStages?.[2]?.title || "Actuar"}
             </h3>
             {" "}
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#77CFC9;margin:0 0 12px;")}>
-              {"ANTES DE QUE SEA TARDE"}
+              {d?.metodoStages?.[2]?.subtitle || "ANTES DE QUE SEA TARDE"}
             </p>
             {" "}
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0;")}>
-              {"La información se convierte en "}
-              <strong style={s("color:#FFFFFF;")}>
-                {"correcciones, tareas, mantenciones y decisiones concretas"}
-              </strong>
-              {". No observar el problema: "}
-              <strong style={s("color:#FFFFFF;")}>
-                {"intervenir a tiempo"}
-              </strong>
-              {" y dejar respaldo."}
+              {d?.metodoStages?.[2]?.desc?.length ? (
+                <RichText value={d.metodoStages[2].desc} strongColor="#FFFFFF" />
+              ) : (
+                <>
+                {"La información se convierte en "}
+                <strong style={s("color:#FFFFFF;")}>
+                  {"correcciones, tareas, mantenciones y decisiones concretas"}
+                </strong>
+                {". No observar el problema: "}
+                <strong style={s("color:#FFFFFF;")}>
+                  {"intervenir a tiempo"}
+                </strong>
+                {" y dejar respaldo."}
+                </>
+              )}
             </p>
           </div>
         </div>
         {" "}
         <div id="resultados" style={s("margin-top:54px;")}>
           <p style={s("text-align:center;font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:rgba(255,255,255,0.55);margin:0 0 20px;")}>
-            {"KPI DE TUS DATOS"}
+            {d?.metodoKpiLabel || "KPI DE TUS DATOS"}
           </p>
           {" "}
           <div style={s("display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;")}>
@@ -137,11 +156,11 @@ export default function Metodo(p: any) {
               </span>
               {" "}
               <h3 style={s("font-size:14px;font-weight:700;color:#FFFFFF;margin:0;")}>
-                {"Trazabilidad completa"}
+                {d?.metodoResultados?.[0]?.title || "Trazabilidad completa"}
               </h3>
               {" "}
               <p className="bl5-res-txt" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;")}>
-                {"Qué ocurrió, cuándo, quién lo registró y en qué equipo."}
+                {d?.metodoResultados?.[0]?.desc || "Qué ocurrió, cuándo, quién lo registró y en qué equipo."}
               </p>
             </div>
             {" "}
@@ -153,11 +172,11 @@ export default function Metodo(p: any) {
               </span>
               {" "}
               <h3 style={s("font-size:14px;font-weight:700;color:#FFFFFF;margin:0;")}>
-                {"Alertas a tiempo"}
+                {d?.metodoResultados?.[1]?.title || "Alertas a tiempo"}
               </h3>
               {" "}
               <p className="bl5-res-txt" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;")}>
-                {"Desviaciones de presión y caudal visibles antes del daño."}
+                {d?.metodoResultados?.[1]?.desc || "Desviaciones de presión y caudal visibles antes del daño."}
               </p>
             </div>
             {" "}
@@ -170,11 +189,11 @@ export default function Metodo(p: any) {
               </span>
               {" "}
               <h3 style={s("font-size:14px;font-weight:700;color:#FFFFFF;margin:0;")}>
-                {"Control a distancia"}
+                {d?.metodoResultados?.[2]?.title || "Control a distancia"}
               </h3>
               {" "}
               <p className="bl5-res-txt" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;")}>
-                {"Sabes qué pasa en cada campo sin estar presente."}
+                {d?.metodoResultados?.[2]?.desc || "Sabes qué pasa en cada campo sin estar presente."}
               </p>
             </div>
             {" "}
@@ -187,11 +206,11 @@ export default function Metodo(p: any) {
               </span>
               {" "}
               <h3 style={s("font-size:14px;font-weight:700;color:#FFFFFF;margin:0;")}>
-                {"Capacitación del equipo"}
+                {d?.metodoResultados?.[3]?.title || "Capacitación del equipo"}
               </h3>
               {" "}
               <p className="bl5-res-txt" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;")}>
-                {"Tu equipo aprende una metodología de trabajo, y el conocimiento queda en la empresa."}
+                {d?.metodoResultados?.[3]?.desc || "Tu equipo aprende una metodología de trabajo, y el conocimiento queda en la empresa."}
               </p>
             </div>
             {" "}
@@ -205,11 +224,11 @@ export default function Metodo(p: any) {
               </span>
               {" "}
               <h3 style={s("font-size:14px;font-weight:700;color:#FFFFFF;margin:0;")}>
-                {"Respaldo de lo realizado"}
+                {d?.metodoResultados?.[4]?.title || "Respaldo de lo realizado"}
               </h3>
               {" "}
               <p className="bl5-res-txt" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;")}>
-                {"Historial exportable de cada riego y mantención."}
+                {d?.metodoResultados?.[4]?.desc || "Historial exportable de cada riego y mantención."}
               </p>
             </div>
           </div>

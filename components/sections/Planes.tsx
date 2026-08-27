@@ -9,30 +9,30 @@ export default function Planes(p: any) {
       <div style={s("max-width:1160px;margin:0 auto;")}>
         <div style={s("text-align:center;margin-bottom:36px;")}>
           <span style={s("font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#0d6b64;")}>
-            {"PRECIOS"}
+            {d?.planesEyebrow || "PRECIOS"}
           </span>
           {" "}
           <h2 style={s("font-size:clamp(28px,3vw,42px);font-weight:700;margin:14px auto 12px;max-width:600px;text-wrap:balance;")}>
-            {"Planes para cada operación"}
+            {d?.planesTitle || "Planes para cada operación"}
           </h2>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.6;color:rgba(0,46,43,0.7);max-width:580px;margin:0 auto 8px;")}>
-            {"Sin costos ocultos. Todos los planes incluyen las mismas funcionalidades base."}
+            {d?.planesSubtitle || "Sin costos ocultos. Todos los planes incluyen las mismas funcionalidades base."}
           </p>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.6;color:rgba(0,46,43,0.55);max-width:580px;margin:0 auto;")}>
-            {"El precio se calcula por la superficie total gestionada en la plataforma — multicampo y multiempresa."}
+            {d?.planesPriceNote || "El precio se calcula por la superficie total gestionada en la plataforma — multicampo y multiempresa."}
           </p>
         </div>
         {" "}
         <div style={s("display:flex;justify-content:center;margin-bottom:40px;")}>
           <div style={s("display:inline-flex;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:20px;padding:4px;")}>
             <button onClick={setUSD} style={s("border:none;border-radius:16px;padding:8px 20px;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;background:{{ usdBtnBg }};color:{{ usdBtnColor }};")}>
-              {"USD · Internacional"}
+              {d?.currencyUsdLabel || "USD · Internacional"}
             </button>
             {" "}
             <button onClick={setUF} style={s("border:none;border-radius:16px;padding:8px 20px;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;background:{{ ufBtnBg }};color:{{ ufBtnColor }};")}>
-              {"UF · Chile"}
+              {d?.currencyUfLabel || "UF · Chile"}
             </button>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function Planes(p: any) {
                 {(plan.highlight) ? (
                   <>
                     <span style={s("position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#002E2B;color:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:700;border-radius:16px;padding:6px 16px;white-space:nowrap;")}>
-                      {"Más elegido"}
+                      {d?.highlightBadge || "Más elegido"}
                     </span>
                   </>
                 ) : null}
@@ -105,7 +105,7 @@ export default function Planes(p: any) {
         </div>
         {" "}
         <p style={s("text-align:center;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:rgba(0,46,43,0.5);margin:10px auto 0;max-width:640px;")}>
-          {"* Blum se integra con la tecnología que ya usas (programadores de riego, sensores, NDVI). La conexión vía API tiene un costo adicional por cotizar, disponible desde el plan Productor mediano."}
+          {d?.planesApiNote || "* Blum se integra con la tecnología que ya usas (programadores de riego, sensores, NDVI). La conexión vía API tiene un costo adicional por cotizar, disponible desde el plan Productor mediano."}
         </p>
       </div>
     </section>

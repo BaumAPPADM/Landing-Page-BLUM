@@ -44,7 +44,7 @@ export const stage = defineType({
     defineField({ name: 'num', title: 'Número', type: 'string' }),
     defineField({ name: 'title', title: 'Título', type: 'string' }),
     defineField({ name: 'subtitle', title: 'Bajada', type: 'string' }),
-    defineField({ name: 'desc', title: 'Descripción', type: 'text', rows: 3 }),
+    defineField({ name: 'desc', title: 'Descripción', type: 'richText' }),
   ],
   preview: { select: { title: 'title', subtitle: 'subtitle' } },
 });
@@ -130,7 +130,7 @@ export const startCard = defineType({
   type: 'object',
   fields: [
     defineField({ name: 'title', title: 'Título', type: 'string' }),
-    defineField({ name: 'desc', title: 'Descripción', type: 'text', rows: 3 }),
+    defineField({ name: 'desc', title: 'Descripción', type: 'richText' }),
     defineField({ name: 'features', title: 'Puntos', type: 'array', of: [{ type: 'string' }] }),
   ],
   preview: { select: { title: 'title', subtitle: 'desc' } },

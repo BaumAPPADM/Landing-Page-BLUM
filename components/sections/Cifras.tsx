@@ -3,27 +3,29 @@ import { s } from "@/lib/css";
 
 export default function Cifras(p: any) {
   const { d } = p;
-  const { haNode, usersNode, countriesNode } = p;
+  const { haNode, usersNode, countriesNode, cifrasItems } = p;
+  const lbl = (i: number, fb: string) => cifrasItems?.[i]?.label || fb;
+  const pre = (i: number, fb: string) => cifrasItems?.[i]?.prefix ?? fb;
   return (
     <section id="cifras" style={s("padding:70px 5% 30px;background:#FFFFFF;")}>
       <div style={s("max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px;text-align:center;")}>
         <div>
           <div style={s("font-family:'IBM Plex Sans',sans-serif;font-size:clamp(38px,4vw,54px);font-weight:700;color:#002E2B;")}>
-            {"+"}{haNode}
+            {pre(0, "+")}{haNode}
           </div>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:0.06em;color:rgba(0,46,43,0.6);margin:8px 0 0;")}>
-            {"HECTÁREAS GESTIONADAS"}
+            {lbl(0, "HECTÁREAS GESTIONADAS")}
           </p>
         </div>
         {" "}
         <div>
           <div style={s("font-family:'IBM Plex Sans',sans-serif;font-size:clamp(38px,4vw,54px);font-weight:700;color:#002E2B;")}>
-            {"+"}{usersNode}
+            {pre(1, "+")}{usersNode}
           </div>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:0.06em;color:rgba(0,46,43,0.6);margin:8px 0 0;")}>
-            {"USUARIOS ACTIVOS"}
+            {lbl(1, "USUARIOS ACTIVOS")}
           </p>
         </div>
         {" "}
@@ -57,7 +59,7 @@ export default function Cifras(p: any) {
           </div>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:0.06em;color:rgba(0,46,43,0.6);margin:8px 0 0;")}>
-            {"PAÍSES · CHILE, PERÚ Y MÉXICO"}
+            {lbl(2, "PAÍSES · CHILE, PERÚ Y MÉXICO")}
           </p>
         </div>
       </div>

@@ -56,7 +56,7 @@ export const landing = defineType({
     // ---------- Problema ----------
     f('problemaEyebrow', 'Etiqueta', 'string', 'problema'),
     f('problemaTitle', 'Título', 'string', 'problema'),
-    f('problemaParagraph', 'Párrafo', 'richText', 'problema'),
+    f('problemaParagraph', 'Párrafo', 'text', 'problema', { rows: 3 }),
     f('problemaLeft', 'Diagrama · izquierda', 'string', 'problema'),
     f('problemaCenter', 'Diagrama · centro', 'string', 'problema'),
     f('problemaRight', 'Diagrama · derecha', 'string', 'problema'),
@@ -72,6 +72,9 @@ export const landing = defineType({
     f('appEyebrow', 'Etiqueta', 'string', 'app'),
     f('appTitle', 'Título', 'string', 'app'),
     f('appScreens', 'Pantallas', 'array', 'app', { of: [{ type: 'screen' }] }),
+    f('appFlowTitle', 'Flujo · título', 'string', 'app'),
+    f('appFlowText', 'Flujo · texto', 'richText', 'app'),
+    f('appFlowSteps', 'Flujo · pasos', 'array', 'app', { of: [{ type: 'string' }] }),
     f('franjaText', 'Franja turquesa · texto', 'richText', 'app'),
     f('franjaCta', 'Franja turquesa · botón', 'string', 'app'),
 
@@ -98,14 +101,22 @@ export const landing = defineType({
     f('partnerCtaUrl', 'Partner · enlace', 'url', 'empezar'),
 
     // ---------- Planes ----------
+    f('planesEyebrow', 'Etiqueta', 'string', 'planes'),
     f('planesTitle', 'Título', 'string', 'planes'),
     f('planesSubtitle', 'Bajada', 'text', 'planes', { rows: 2 }),
+    f('planesPriceNote', 'Nota sobre el cálculo', 'text', 'planes', { rows: 2 }),
+    f('currencyUsdLabel', 'Botón moneda · USD', 'string', 'planes'),
+    f('currencyUfLabel', 'Botón moneda · UF', 'string', 'planes'),
+    f('highlightBadge', 'Etiqueta del plan destacado', 'string', 'planes'),
     f('plans', 'Planes', 'array', 'planes', { of: [{ type: 'plan' }] }),
+    f('planesApiNote', 'Nota al pie (integraciones)', 'text', 'planes', { rows: 3 }),
 
     // ---------- Contacto ----------
+    f('contactoEyebrow', 'Etiqueta', 'string', 'contacto'),
     f('contactoTitle', 'Título', 'string', 'contacto'),
     f('contactoParagraph', 'Párrafo', 'richText', 'contacto'),
     f('contactoImage', 'Imagen de fondo', 'image', 'contacto', { options: { hotspot: true } }),
+    f('whatsappLabel', 'Botón de WhatsApp', 'string', 'contacto'),
     f('whatsappUrl', 'Enlace de WhatsApp', 'url', 'contacto'),
     f('contactEmail', 'Correo de contacto', 'string', 'contacto'),
     f('formSubmitLabel', 'Botón del formulario', 'string', 'contacto'),

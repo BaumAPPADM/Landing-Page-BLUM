@@ -1,5 +1,6 @@
 import React from "react";
 import { s } from "@/lib/css";
+import RichText from "@/components/RichText";
 
 export default function AppSection(p: any) {
   const { d } = p;
@@ -9,22 +10,28 @@ export default function AppSection(p: any) {
       <div style={s("max-width:1150px;margin:0 auto;")}>
         <div style={s("text-align:center;margin-bottom:60px;")}>
           <h2 style={s("font-size:clamp(26px,2.6vw,36px);font-weight:700;margin:14px auto 12px;max-width:600px;text-wrap:balance;")}>
-            {"Del manómetro a la decisión."}
+            {d?.appFlowTitle || "Del manómetro a la decisión."}
           </h2>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.6;color:rgba(0,46,43,0.7);max-width:600px;margin:0 auto;")}>
-            {"El "}
-            <b>
-              {"blumer mide y registra en la app "}
-            </b>
-            {"desde el sector. El responsable ve el historial y la alerta en la web, y actúa antes de que el problema crezca."}
+            {d?.appFlowText?.length ? (
+              <RichText value={d.appFlowText} />
+            ) : (
+              <>
+              {"El "}
+              <b>
+                {"blumer mide y registra en la app "}
+              </b>
+              {"desde el sector. El responsable ve el historial y la alerta en la web, y actúa antes de que el problema crezca."}
+              </>
+            )}
           </p>
         </div>
         {" "}
         <div style={s("display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:-26px 0 54px;")}>
           <span style={s("display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#002E2B;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:18px;padding:9px 16px;")}>
             <span style={s("width:7px;height:7px;border-radius:50%;background:#77CFC9;")}></span>
-            {"Manómetro en el bloque"}
+            {d?.appFlowSteps?.[0] || "Manómetro en el bloque"}
           </span>
           {" "}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d6b64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -34,7 +41,7 @@ export default function AppSection(p: any) {
           {" "}
           <span style={s("display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#002E2B;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:18px;padding:9px 16px;")}>
             <span style={s("width:7px;height:7px;border-radius:50%;background:#77CFC9;")}></span>
-            {"Registro en la app"}
+            {d?.appFlowSteps?.[1] || "Registro en la app"}
           </span>
           {" "}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d6b64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -44,7 +51,7 @@ export default function AppSection(p: any) {
           {" "}
           <span style={s("display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#002E2B;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:18px;padding:9px 16px;")}>
             <span style={s("width:7px;height:7px;border-radius:50%;background:#F64500;")}></span>
-            {"Historial y alerta"}
+            {d?.appFlowSteps?.[2] || "Historial y alerta"}
           </span>
           {" "}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d6b64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -53,7 +60,7 @@ export default function AppSection(p: any) {
           </svg>
           {" "}
           <span style={s("display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#FFFFFF;background:#002E2B;border-radius:18px;padding:9px 16px;")}>
-            {"Acción del responsable"}
+            {d?.appFlowSteps?.[3] || "Acción del responsable"}
           </span>
         </div>
         {" "}
@@ -84,7 +91,7 @@ export default function AppSection(p: any) {
           {" "}
           <div style={s("flex:0 1 520px;min-width:300px;display:flex;flex-direction:column;gap:14px;")}>
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;color:rgba(0,46,43,0.5);margin:0;")}>
-              {"01 · REGISTRAR — EN TERRENO, DESDE LA APP"}
+              {d?.appEyebrow || "01 · REGISTRAR — EN TERRENO, DESDE LA APP"}
             </p>
             {" "}
             {(appMenu || []).map((m, i) => (
