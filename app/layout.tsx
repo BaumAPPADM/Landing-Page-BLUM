@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
+import { draftMode } from 'next/headers';
+import { VisualEditing } from 'next-sanity/visual-editing';
 import './globals.css';
 import './hover.css';
 import { getLanding } from '@/sanity/queries';
 import { urlFor } from '@/sanity/image';
+import { SanityLive } from '@/sanity/live';
 
 export async function generateMetadata(): Promise<Metadata> {
   const d = await getLanding();
@@ -19,10 +22,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const { isEnabled: isDraft } = await draftMode();
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        {children}
+        <SanityLive />
+        {isDraft ? <VisualEditing /> : null}
+      </body>
     </html>
   );
 }

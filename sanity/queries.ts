@@ -1,18 +1,17 @@
 import { groq } from 'next-sanity';
-import { client } from './client';
+import { sanityFetch } from './live';
 
 export const LANDING_QUERY = groq`*[_type == "landing"][0]`;
 
-/** Cached fetch tagged 'landing' so the Sanity webhook can revalidate it on publish. */
-export async function getLanding() {
+/**
+ * defineLive handles caching and revalidation on its own: <SanityLive> keeps an
+ * open connection, so publishing in the Studio refreshes the page without a
+ * webhook or a polling interval.
+ */
+export async function getLanding(): Promise<any> {
   try {
-    return await client.fetch(
-      LANDING_QUERY,
-      {},
-      // 10s: lo que publicas en Sanity aparece en el sitio casi al instante,
-      // sin dejar que cada visita golpee la API de Sanity.
-      { next: { revalidate: 10, tags: ['landing'] } },
-    );
+    const { data } = await sanityFetch({ query: LANDING_QUERY });
+    return data ?? null;
   } catch {
     // Sanity unreachable or dataset empty: fall back to the bundled defaults.
     return null;

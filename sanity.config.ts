@@ -2,6 +2,7 @@
 
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
+import { presentationTool } from 'sanity/presentation';
 import { visionTool } from '@sanity/vision';
 import { apiVersion, dataset, projectId } from './sanity/env';
 import { schemaTypes } from './sanity/schemas';
@@ -16,6 +17,15 @@ export default defineConfig({
   dataset,
   schema: { types: schemaTypes },
   plugins: [
+    // "Presentation" = the site next to the form: click any text on the page to
+    // jump straight to the field that owns it.
+    presentationTool({
+      previewUrl: {
+        origin: process.env.SANITY_STUDIO_PREVIEW_ORIGIN || 'https://blum-landing-two.vercel.app',
+        preview: '/',
+        previewMode: { enable: '/api/draft-mode/enable' },
+      },
+    }),
     structureTool({
       structure: (S) =>
         S.list()
