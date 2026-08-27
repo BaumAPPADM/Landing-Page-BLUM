@@ -9,7 +9,9 @@ export async function getLanding() {
     return await client.fetch(
       LANDING_QUERY,
       {},
-      { next: { revalidate: 300, tags: ['landing'] } },
+      // 10s: lo que publicas en Sanity aparece en el sitio casi al instante,
+      // sin dejar que cada visita golpee la API de Sanity.
+      { next: { revalidate: 10, tags: ['landing'] } },
     );
   } catch {
     // Sanity unreachable or dataset empty: fall back to the bundled defaults.
