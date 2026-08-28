@@ -71,7 +71,7 @@ export default function Hero(p: any) {
           {" "}
           <span style={s("flex:1 1 auto;")}></span>
           {" "}
-          <a className="bh9" href={d?.appStoreUrl || "https://apps.apple.com"} target="_blank" rel="noopener" aria-label="Descargar en App Store" style={s("display:inline-flex;align-items:center;gap:7px;background:rgba(0,20,18,0.5);border:1px solid rgba(255,255,255,0.22);border-radius:8px;padding:6px 10px;color:#FFFFFF;")}>
+          <a className="bh9" href={d?.appStoreUrl || "https://apps.apple.com/cl/app/baumapp/id6751601274"} target="_blank" rel="noopener" aria-label="Descargar en App Store" style={s("display:inline-flex;align-items:center;gap:7px;background:rgba(0,20,18,0.5);border:1px solid rgba(255,255,255,0.22);border-radius:8px;padding:6px 10px;color:#FFFFFF;")}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-1-1.94.03-3.72 1.13-4.72 2.86-2.01 3.49-.51 8.66 1.45 11.49.96 1.39 2.1 2.94 3.6 2.88 1.45-.06 1.99-.93 3.74-.93s2.24.93 3.77.9c1.56-.03 2.54-1.41 3.49-2.8 1.1-1.61 1.55-3.17 1.58-3.25-.04-.02-3.03-1.16-3.06-4.59zM14.17 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z"></path>
             </svg>
@@ -86,7 +86,7 @@ export default function Hero(p: any) {
             </span>
           </a>
           {" "}
-          <a className="bh10" href={d?.playStoreUrl || "https://play.google.com"} target="_blank" rel="noopener" aria-label="Descargar en Google Play" style={s("display:inline-flex;align-items:center;gap:7px;background:rgba(0,20,18,0.5);border:1px solid rgba(255,255,255,0.22);border-radius:8px;padding:6px 10px;color:#FFFFFF;")}>
+          <a className="bh10" href={d?.playStoreUrl || "https://play.google.com/store/apps/details?id=com.baumsystem.baumapp"} target="_blank" rel="noopener" aria-label="Descargar en Google Play" style={s("display:inline-flex;align-items:center;gap:7px;background:rgba(0,20,18,0.5);border:1px solid rgba(255,255,255,0.22);border-radius:8px;padding:6px 10px;color:#FFFFFF;")}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M3.6 1.8c-.35.37-.55.94-.55 1.68v17.07c0 .74.2 1.31.55 1.68l.09.08 9.56-9.56v-.22L3.69 1.72l-.09.08z"></path>
               <path d="M16.83 15.93l-3.58-3.18v-.22l3.58-3.18.08.05 3.78 2.15c1.08.61 1.08 1.61 0 2.23l-3.78 2.15-.08 0z" opacity="0.85"></path>

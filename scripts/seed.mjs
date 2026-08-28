@@ -84,8 +84,8 @@ const doc = {
   heroCtaSecondary: '¿Quieres ver cómo medir?',
   heroImage: await img('hero-terreno-oficina.png'),
   heroImageAlt: 'Del terreno a la oficina: operador midiendo en el campo y gerente viendo los datos en BLUM',
-  appStoreUrl: 'https://apps.apple.com',
-  playStoreUrl: 'https://play.google.com',
+  appStoreUrl: 'https://apps.apple.com/cl/app/baumapp/id6751601274',
+  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.baumsystem.baumapp',
   heroScrollLabel: 'DESCUBRE CÓMO FUNCIONA',
 
   problemaEyebrow: 'EL PROBLEMA QUE RESOLVEMOS',
