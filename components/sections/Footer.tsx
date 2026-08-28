@@ -25,19 +25,19 @@ export default function Footer(p: any) {
           </p>
           {" "}
           <div style={s("display:flex;flex-direction:column;gap:10px;")}>
-            <a className="bh22" href="#metodo" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+            <a className="bh22" href={d?.footerColumns?.[0]?.links?.[0]?.href || "#metodo"} style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
               {d?.footerColumns?.[0]?.links?.[0]?.label || "Cómo funciona"}
             </a>
             {" "}
-            <a className="bh23" href="#funcionalidades" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+            <a className="bh23" href={d?.footerColumns?.[0]?.links?.[1]?.href || "#app"} style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
               {d?.footerColumns?.[0]?.links?.[1]?.label || "Funcionalidades"}
             </a>
             {" "}
-            <a className="bh24" href="#plataforma" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+            <a className="bh24" href={d?.footerColumns?.[0]?.links?.[2]?.href || "#web"} style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
               {d?.footerColumns?.[0]?.links?.[2]?.label || "App y Web"}
             </a>
             {" "}
-            <a className="bh25" href="#precios" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+            <a className="bh25" href={d?.footerColumns?.[0]?.links?.[3]?.href || "#planes"} style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
               {d?.footerColumns?.[0]?.links?.[3]?.label || "Planes"}
             </a>
           </div>
@@ -49,11 +49,11 @@ export default function Footer(p: any) {
           </p>
           {" "}
           <div style={s("display:flex;flex-direction:column;gap:10px;")}>
-            <a className="bh26" href="#contacto" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+            <a className="bh26" href={d?.footerColumns?.[1]?.links?.[0]?.href || "#contacto"} style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
               {d?.footerColumns?.[1]?.links?.[0]?.label || "Agenda una demo"}
             </a>
             {" "}
-            <a className="bh27" href="#contacto" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+            <a className="bh27" href={d?.footerColumns?.[1]?.links?.[1]?.href || "#contacto"} style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
               {d?.footerColumns?.[1]?.links?.[1]?.label || "Contacto"}
             </a>
           </div>
@@ -65,14 +65,14 @@ export default function Footer(p: any) {
           </p>
           {" "}
           <div style={s("display:flex;flex-direction:column;gap:10px;")}>
-            <a className="bh28" href="https://apps.apple.com/cl/app/baumapp/id6751601274" target="_blank" rel="noopener" style={s("display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+            <a className="bh28" href={d?.footerColumns?.[2]?.links?.[0]?.href || "https://apps.apple.com/cl/app/baumapp/id6751601274"} target="_blank" rel="noopener" style={s("display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-1-1.94.03-3.72 1.13-4.72 2.86-2.01 3.49-.51 8.66 1.45 11.49.96 1.39 2.1 2.94 3.6 2.88 1.45-.06 1.99-.93 3.74-.93s2.24.93 3.77.9c1.56-.03 2.54-1.41 3.49-2.8 1.1-1.61 1.55-3.17 1.58-3.25-.04-.02-3.03-1.16-3.06-4.59z"></path>
               </svg>
               {d?.footerColumns?.[2]?.links?.[0]?.label || "App Store"}
             </a>
             {" "}
-            <a className="bh29" href="https://play.google.com/store/apps/details?id=com.baumsystem.baumapp" target="_blank" rel="noopener" style={s("display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+            <a className="bh29" href={d?.footerColumns?.[2]?.links?.[1]?.href || "https://play.google.com/store/apps/details?id=com.baumsystem.baumapp"} target="_blank" rel="noopener" style={s("display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3.06 1.24 12.9 11.08 3.06 20.92A2.01 2.01 0 0 1 3 20.5v-17c0-.15.02-.29.06-.26zM13.96 12.14l2.6 2.6-9.6 5.46c-.44.25-.9.3-1.3.16l8.3-8.22zM17.9 9.9l2.5 1.42c1.1.62 1.1 1.74 0 2.36l-2.5 1.42-2.88-2.6 2.88-2.6zM5.66 1.64c.4-.14.86-.09 1.3.16l9.6 5.46-2.6 2.6-8.3-8.22z"></path>
               </svg>

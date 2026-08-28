@@ -82,11 +82,10 @@ const doc = {
   ]),
   heroCtaPrimary: 'Agenda una demo',
   heroCtaSecondary: '¿Quieres ver cómo medir?',
-  heroImage: await img('hero-terreno-oficina.png'),
+  heroImage: await img('hero-terreno-oficina-v2.png'),
   heroImageAlt: 'Del terreno a la oficina: operador midiendo en el campo y gerente viendo los datos en BLUM',
   appStoreUrl: 'https://apps.apple.com/cl/app/baumapp/id6751601274',
   playStoreUrl: 'https://play.google.com/store/apps/details?id=com.baumsystem.baumapp',
-  heroScrollLabel: 'DESCUBRE CÓMO FUNCIONA',
 
   problemaEyebrow: 'EL PROBLEMA QUE RESOLVEMOS',
   problemaTitle: '¿Sabes cómo se está regando realmente tu campo?',
@@ -222,7 +221,7 @@ const doc = {
     { title: 'EMPRESA', links: arr([
       { label: 'Agenda una demo', href: '#contacto' }, { label: 'Contacto', href: '#contacto' }]) },
     { title: 'DESCARGA LA APP', links: arr([
-      { label: 'App Store', href: 'https://apps.apple.com' }, { label: 'Google Play', href: 'https://play.google.com' }]) },
+      { label: 'App Store', href: 'https://apps.apple.com/cl/app/baumapp/id6751601274' }, { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.baumsystem.baumapp' }]) },
   ]),
   footerLegal: '© 2026 BLUM — Un producto de Baum System',
 };
