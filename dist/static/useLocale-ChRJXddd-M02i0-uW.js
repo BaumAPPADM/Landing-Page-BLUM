@@ -1,1 +1,0 @@
-import{r as e}from"./rolldown-runtime-hePW80VL.js";import{J as t}from"./_singletons-BaQQQ4MI.js";import{t as n}from"./react-CwJFpaho.js";var r=e(n(),1);function i(){return a().currentLocale}function a(){let e=(0,r.useContext)(t);if(!e)throw Error(`Sanity LocaleContext value missing. Is this hook being used outside LocaleContext.Provider?`);return e}export{a as n,i as t};
