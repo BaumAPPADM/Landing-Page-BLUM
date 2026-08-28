@@ -110,18 +110,25 @@ export default function Empezar(p: any) {
                 </span>
                 {" "}
                 <div>
-                  <p style={s("font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;color:#FFFFFF;margin:0;")}>
-                    {d?.partnerName || "Baum System"}
+                  <p style={s("font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;color:#FFFFFF;margin:0;display:flex;align-items:center;gap:8px;")}>
+                    {(d?.partnerName || "Baum System") + " "}
+                    <span style={s("display:inline-flex;align-items:center;gap:5px;background:#E9A820;color:#002E2B;border-radius:14px;padding:4px 11px;font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.04em;")}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#002E2B" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 2l2.4 2.4 3.4-.5 1 3.3 3.2 1.4-1.3 3.4 1.3 3.4-3.2 1.4-1 3.3-3.4-.5L12 22l-2.4-2.4-3.4.5-1-3.3-3.2-1.4L3.3 12 2 8.6l3.2-1.4 1-3.3 3.4.5z"></path>
+                        <path d="M9 12l2 2 4-4"></path>
+                      </svg>
+                      {" "}{d?.partnerBadge || "CERTIFICADO"}{" "}
+                    </span>
                   </p>
                   {" "}
-                  <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:#77CFC9;margin:2px 0 0;")}>
-                    {d?.partnerRole || "Partner certificado · Implementación y consultoría de riego"}
+                  <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:rgba(255,255,255,0.75);margin:4px 0 0;line-height:1.5;")}>
+                    {d?.partnerRole || "Ingeniería y servicios de riego tecnificado en Chile, Perú y México — el partner de origen de Blum."}
                   </p>
                 </div>
               </div>
               {" "}
               <div style={s("display:flex;justify-content:flex-end;")}>
-                <a className="bh16" href="https://www.baumsystem.com" target="_blank" rel="noopener" style={s("display:inline-flex;align-items:center;gap:6px;background:#77CFC9;color:#002E2B;border-radius:18px;padding:9px 18px;font-family:'Sora',sans-serif;font-size:12.5px;font-weight:700;")}>
+                <a className="bh17" href="https://www.baumsystem.com" target="_blank" rel="noopener" style={s("display:inline-flex;align-items:center;gap:6px;background:#77CFC9;color:#002E2B;border-radius:18px;padding:9px 18px;font-family:'Sora',sans-serif;font-size:12.5px;font-weight:700;")}>
                   {d?.partnerCtaLabel || "Contactar a Baum System ↗"}
                 </a>
               </div>

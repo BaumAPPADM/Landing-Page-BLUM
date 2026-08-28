@@ -27,25 +27,25 @@ export default function Contacto(p: any) {
               <RichText value={d?.contactoParagraph} strongColor="#FFFFFF" />
             ) : (
               <>
-              {"Enterarse tarde cuesta caro. Completa tus datos y "}
+              {"Enterarse tarde cuesta caro. Agenda una "}
               <strong style={s("color:#FFFFFF;")}>
-                {"te contactamos en menos de 48 horas"}
+                {"demo de 30 minutos"}
               </strong>
-              {". Te mostramos la plataforma con "}
+              {" — "}
               <strong style={s("color:#FFFFFF;")}>
-                {"datos reales de riego, sin compromiso"}
+                {"te respondemos en menos de 48 horas"}
               </strong>
-              {"."}
+              {". Te mostramos la plataforma con datos reales de riego, sin compromiso."}
               </>
             )}
           </p>
           {" "}
           <div style={s("display:flex;gap:12px;flex-wrap:wrap;")}>
-            <a className="bh18" href={d?.whatsappUrl || "https://wa.link/l88bq2"} target="_blank" rel="noopener" style={s("display:inline-flex;align-items:center;gap:8px;background:#77CFC9;color:#002E2B;border-radius:26px;padding:14px 26px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;")}>
+            <a className="bh19" href={d?.whatsappUrl || "https://wa.link/l88bq2"} target="_blank" rel="noopener" style={s("display:inline-flex;align-items:center;gap:8px;background:#77CFC9;color:#002E2B;border-radius:26px;padding:14px 26px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;")}>
               {d?.whatsappLabel || "WhatsApp"}
             </a>
             {" "}
-            <a className="bh19" href={"mailto:" + (d?.contactEmail || "b.sepulveda@blumapss.com")} style={s("display:inline-flex;align-items:center;gap:8px;background:transparent;color:#FFFFFF;border:1.5px solid rgba(255,255,255,0.6);border-radius:26px;padding:13px 26px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:600;")}>
+            <a className="bh20" href={"mailto:" + (d?.contactEmail || "b.sepulveda@blumapss.com")} style={s("display:inline-flex;align-items:center;gap:8px;background:transparent;color:#FFFFFF;border:1.5px solid rgba(255,255,255,0.6);border-radius:26px;padding:13px 26px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:600;")}>
               {d?.contactEmail || "b.sepulveda@blumapss.com"}
             </a>
           </div>
@@ -73,7 +73,7 @@ export default function Contacto(p: any) {
                 {" "}
                 <textarea placeholder="Cuéntanos sobre tu campo" rows={4} style={s("font-family:'IBM Plex Sans',sans-serif;font-size:14px;padding:13px 16px;border:1px solid rgba(0,46,43,0.2);border-radius:10px;outline:none;resize:vertical;")}></textarea>
                 {" "}
-                <button className="bh20" onClick={sendForm} style={s("background:linear-gradient(90deg,#F64500 0%,#77CFC9 55%,#002E2B 100%);color:#FFFFFF;border:none;border-radius:26px;padding:15px;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:opacity 0.2s ease;")}>
+                <button className="bh21" onClick={sendForm} style={s("background:linear-gradient(90deg,#F64500 0%,#77CFC9 55%,#002E2B 100%);color:#FFFFFF;border:none;border-radius:26px;padding:15px;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:opacity 0.2s ease;")}>
                   {d?.formSubmitLabel || "Enviar solicitud"}
                 </button>
               </div>

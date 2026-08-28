@@ -80,7 +80,7 @@ export default function Planes(p: any) {
                   {plan.example}
                 </p>
                 {" "}
-                <button className="bh17" onClick={scrollToContact} style={s("align-self:flex-start;background:{{ plan.btnBg }};color:{{ plan.btnColor }};border:{{ plan.btnBorder }};border-radius:26px;padding:14px 30px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;transition:opacity 0.2s ease,background 0.2s ease;")}>
+                <button className="bh18" onClick={scrollToContact} style={s("align-self:flex-start;background:{{ plan.btnBg }};color:{{ plan.btnColor }};border:{{ plan.btnBorder }};border-radius:26px;padding:14px 30px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;transition:opacity 0.2s ease,background 0.2s ease;")}>
                   {plan.cta}
                 </button>
                 {" "}
@@ -105,7 +105,7 @@ export default function Planes(p: any) {
         </div>
         {" "}
         <p style={s("text-align:center;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:rgba(0,46,43,0.5);margin:10px auto 0;max-width:640px;")}>
-          {d?.planesApiNote || "* Blum se integra con la tecnología que ya usas (programadores de riego, sensores, NDVI). La conexión vía API tiene un costo adicional por cotizar, disponible desde el plan Productor mediano."}
+          {d?.planesApiNote || "* La API de Blum es abierta y sin costo. Solo se cotiza cuando la integración requiere un desarrollo a medida — disponible desde el plan Productor mediano."}
         </p>
       </div>
     </section>

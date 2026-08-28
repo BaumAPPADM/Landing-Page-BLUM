@@ -1,5 +1,6 @@
 import React from "react";
 import { s } from "@/lib/css";
+import RichText from "@/components/RichText";
 
 export default function Problema(p: any) {
   const { d } = p;
@@ -16,7 +17,34 @@ export default function Problema(p: any) {
           </h2>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.7;color:rgba(0,46,43,0.72);max-width:620px;margin:0 auto;")}>
-            {d?.problemaParagraph || "El riego ocurre en terreno. Pero las decisiones se toman lejos de él. BLUM conecta ambos mundos con información real, trazable y disponible al instante."}
+            {d?.problemaParagraph?.length ? (
+              <RichText value={d?.problemaParagraph} />
+            ) : (
+              <>
+              {"El "}
+              <b>
+                {"riego"}
+              </b>
+              {" ocurre en "}
+              <b>
+                {"terreno."}
+              </b>
+              {" Pero las "}
+              <b>
+                {"decisiones"}
+              </b>
+              {" se toman lejos de él. "}
+              <br />
+              <b>
+                {"BLUM conecta ambos mundos"}
+              </b>
+              {" con información "}
+              <b>
+                {"real, trazable y disponible"}
+              </b>
+              {" al instante."}
+              </>
+            )}
           </p>
         </div>
         {" "}
@@ -35,7 +63,7 @@ export default function Problema(p: any) {
           <span style={s("display:inline-flex;align-items:center;gap:7px;background:#002E2B;border-radius:20px;padding:8px 16px;")}>
             <img src="/assets/isotipo-nave.png" style={s("width:14px;")} alt="" />
             <span style={s("font-family:'Sora',sans-serif;font-size:12.5px;font-weight:700;color:#FFFFFF;")}>
-              {d?.problemaCenter || "BLUM"}
+              {"BLUM"}
             </span>
           </span>
           {" "}

@@ -3,9 +3,9 @@ import { s } from "@/lib/css";
 
 export default function Cifras(p: any) {
   const { d } = p;
-  const { haNode, usersNode, countriesNode, cifrasItems } = p;
-  const lbl = (i: number, fb: string) => cifrasItems?.[i]?.label || fb;
-  const pre = (i: number, fb: string) => cifrasItems?.[i]?.prefix ?? fb;
+  const lbl = (i: number, fb: string) => p.cifrasItems?.[i]?.label || fb;
+  const pre = (i: number, fb: string) => p.cifrasItems?.[i]?.prefix ?? fb;
+  const { haNode, usersNode, countriesNode } = p;
   return (
     <section id="cifras" style={s("padding:70px 5% 30px;background:#FFFFFF;")}>
       <div style={s("max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px;text-align:center;")}>

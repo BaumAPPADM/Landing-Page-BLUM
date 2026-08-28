@@ -7,6 +7,7 @@ const G = [
   { name: 'metodo', title: 'Método' },
   { name: 'app', title: 'App' },
   { name: 'web', title: 'Web' },
+  { name: 'api', title: 'API' },
   { name: 'cifras', title: 'Cifras' },
   { name: 'partners', title: 'Partners' },
   { name: 'empezar', title: 'Cómo empezar' },
@@ -55,7 +56,7 @@ export const landing = defineType({
     // ---------- Problema ----------
     f('problemaEyebrow', 'Etiqueta', 'string', 'problema'),
     f('problemaTitle', 'Título', 'string', 'problema'),
-    f('problemaParagraph', 'Párrafo', 'text', 'problema', { rows: 3 }),
+    f('problemaParagraph', 'Párrafo', 'richText', 'problema'),
     f('problemaLeft', 'Diagrama · izquierda', 'string', 'problema'),
     f('problemaCenter', 'Diagrama · centro', 'string', 'problema'),
     f('problemaRight', 'Diagrama · derecha', 'string', 'problema'),
@@ -82,6 +83,11 @@ export const landing = defineType({
     f('webTitle', 'Título', 'string', 'web'),
     f('webScreens', 'Pantallas', 'array', 'web', { of: [{ type: 'screen' }] }),
 
+    // ---------- API ----------
+    f('apiTitle', 'Título', 'string', 'api'),
+    f('apiText', 'Texto', 'richText', 'api'),
+    f('apiCta', 'Botón', 'string', 'api'),
+
     // ---------- Cifras ----------
     f('cifrasItems', 'Cifras', 'array', 'cifras', { of: [{ type: 'stat' }] }),
 
@@ -94,7 +100,8 @@ export const landing = defineType({
     f('empezarSubtitle', 'Bajada', 'text', 'empezar', { rows: 2 }),
     f('empezarCards', 'Tarjetas', 'array', 'empezar', { of: [{ type: 'startCard' }] }),
     f('partnerName', 'Partner · nombre', 'string', 'empezar'),
-    f('partnerRole', 'Partner · descripción', 'string', 'empezar'),
+    f('partnerBadge', 'Partner · distintivo', 'string', 'empezar'),
+    f('partnerRole', 'Partner · descripción', 'text', 'empezar', { rows: 2 }),
     f('partnerLogoImg', 'Partner · logo', 'image', 'empezar'),
     f('partnerCtaLabel', 'Partner · botón', 'string', 'empezar'),
     f('partnerCtaUrl', 'Partner · enlace', 'url', 'empezar'),

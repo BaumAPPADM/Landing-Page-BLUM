@@ -10,9 +10,10 @@ import ChatBubble from './sections/ChatBubble';
 import Hero from './sections/Hero';
 import Problema from './sections/Problema';
 import Metodo from './sections/Metodo';
-import AppSection from './sections/AppSection';
 import Franja from './sections/Franja';
+import AppSection from './sections/AppSection';
 import WebSection from './sections/WebSection';
+import ApiSection from './sections/ApiSection';
 import Cifras from './sections/Cifras';
 import Partners from './sections/Partners';
 import Empezar from './sections/Empezar';
@@ -164,9 +165,10 @@ export default function Landing({ d }: { d: any }) {
       <Hero {...ctx} />
       <Problema {...ctx} />
       <Metodo {...ctx} />
-      <AppSection {...ctx} />
       <Franja {...ctx} />
+      <AppSection {...ctx} />
       <WebSection {...ctx} />
+      <ApiSection {...ctx} />
       <Cifras {...ctx} />
       <Partners {...ctx} />
       <Empezar {...ctx} />

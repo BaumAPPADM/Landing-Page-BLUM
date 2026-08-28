@@ -5,8 +5,8 @@ import { defaults } from "@/lib/defaults";
 
 export default function Nav(p: any) {
   const { d } = p;
-  const { scrollToTop, scrollToContact } = p;
   const links = d?.navLinks?.length ? d.navLinks : defaults.navLinks;
+  const { scrollToTop, scrollToContact } = p;
   return (
     <nav style={s("position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 28px;background:rgba(21,62,57,0.78);backdrop-filter:blur(12px);")}>
       <img src={urlFor(d?.logo) || "/assets/logo-07.png"} onClick={scrollToTop} style={s("height:40px;cursor:pointer;")} alt="blum" />

@@ -15,14 +15,18 @@ export default function AppSection(p: any) {
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.6;color:rgba(0,46,43,0.7);max-width:600px;margin:0 auto;")}>
             {d?.appFlowText?.length ? (
-              <RichText value={d.appFlowText} />
+              <RichText value={d?.appFlowText} />
             ) : (
               <>
               {"El "}
               <b>
-                {"blumer mide y registra en la app "}
+                {"blumer"}
               </b>
-              {"desde el sector. El responsable ve el historial y la alerta en la web, y actúa antes de que el problema crezca."}
+              {" — el encargado en terreno de registrar mediciones y eventos desde la app — "}
+              <b>
+                {"mide y registra desde el sector, incluso sin señal"}
+              </b>
+              {". El responsable ve el historial y la alerta en la web, y actúa antes de que el problema crezca."}
               </>
             )}
           </p>
@@ -71,7 +75,7 @@ export default function AppSection(p: any) {
             </div>
             {" "}
             <div style={s("display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px;")}>
-              <button className="bh11" onClick={appPrev} aria-label="Módulo anterior" style={s("display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;border:1.5px solid #002E2B;color:#002E2B;cursor:pointer;transition:background 0.2s ease;")}>
+              <button className="bh12" onClick={appPrev} aria-label="Módulo anterior" style={s("display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;border:1.5px solid #002E2B;color:#002E2B;cursor:pointer;transition:background 0.2s ease;")}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 18l-6-6 6-6"></path>
                 </svg>
@@ -81,7 +85,7 @@ export default function AppSection(p: any) {
                 {appActiveLabel}
               </span>
               {" "}
-              <button className="bh12" onClick={appNext} aria-label="Módulo siguiente" style={s("display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;border:1.5px solid #002E2B;color:#002E2B;cursor:pointer;transition:background 0.2s ease;")}>
+              <button className="bh13" onClick={appNext} aria-label="Módulo siguiente" style={s("display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:transparent;border:1.5px solid #002E2B;color:#002E2B;cursor:pointer;transition:background 0.2s ease;")}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 6l6 6-6 6"></path>
                 </svg>

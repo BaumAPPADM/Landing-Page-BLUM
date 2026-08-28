@@ -22,33 +22,35 @@ export default function Hero(p: any) {
           {" "}
           <h1 style={s("font-size:clamp(23px,2.2vw,33px);line-height:1.2;color:#FFFFFF;font-weight:700;margin:0 0 16px;text-wrap:balance;")}>
             {d?.heroTitlePre || "Software de riego: "}
-            <span style={s("color: " + (d?.heroTitleAccentColor || "rgb(245, 166, 35)") + ";")}>
+            <span style={s("color: rgb(245, 166, 35); width: 381px; height: 85px;")} data-cc-id="cc-2">
               {d?.heroTitleAccent || "Registro de medición y eventos."}
             </span>
             {" "}
             <br />
-            {d?.heroTitlePost || "Qué ocurre en terreno."}
+            {d?.heroTitlePost || "Saber qué ocurre en terreno."}
           </h1>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,0.85);margin:0 0 24px;max-width:440px;")}>
             {d?.heroParagraph?.length ? (
-              <RichText value={d.heroParagraph} strongColor="#FFFFFF" />
+              <RichText value={d?.heroParagraph} strongColor="#FFFFFF" />
             ) : (
               <>
               {"Tu operador "}
-              <strong style={s("color:#FFFFFF;")}>
+              <strong style={s("color: rgb(255, 255, 255);")}>
                 {"registra mediciones y eventos desde la app"}
               </strong>
-              {", simple y en terreno."}
+              {",  "}
+              <br />
+              {"en terreno."}
               <b>
                 {" Blum"}
               </b>
               {" centraliza la información, te entrega "}
-              <strong style={s("color:#FFFFFF;")}>
+              <strong style={s("color: rgb(255, 255, 255);")}>
                 {"alertas y tendencias"}
               </strong>
               {" para armar tu "}
-              <strong style={s("color:#FFFFFF;")}>
+              <strong style={s("color: rgb(255, 255, 255);")}>
                 {"plan de acción"}
               </strong>
               {" antes de que las fallas afecten el cultivo."}

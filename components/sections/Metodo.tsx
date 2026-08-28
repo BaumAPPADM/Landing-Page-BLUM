@@ -33,7 +33,7 @@ export default function Metodo(p: any) {
             {" "}
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0;")}>
               {d?.metodoStages?.[0]?.desc?.length ? (
-                <RichText value={d.metodoStages[0].desc} strongColor="#FFFFFF" />
+                <RichText value={d?.metodoStages?.[0]?.desc} strongColor="#FFFFFF" />
               ) : (
                 <>
                 {"El equipo documenta "}
@@ -78,7 +78,7 @@ export default function Metodo(p: any) {
             {" "}
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0;")}>
               {d?.metodoStages?.[1]?.desc?.length ? (
-                <RichText value={d.metodoStages[1].desc} strongColor="#FFFFFF" />
+                <RichText value={d?.metodoStages?.[1]?.desc} strongColor="#FFFFFF" />
               ) : (
                 <>
                 {"Blum organiza los registros en "}
@@ -123,12 +123,16 @@ export default function Metodo(p: any) {
             {" "}
             <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.85);margin:0;")}>
               {d?.metodoStages?.[2]?.desc?.length ? (
-                <RichText value={d.metodoStages[2].desc} strongColor="#FFFFFF" />
+                <RichText value={d?.metodoStages?.[2]?.desc} strongColor="#FFFFFF" />
               ) : (
                 <>
                 {"La información se convierte en "}
                 <strong style={s("color:#FFFFFF;")}>
                   {"correcciones, tareas, mantenciones y decisiones concretas"}
+                </strong>
+                {", con "}
+                <strong style={s("color:#FFFFFF;")}>
+                  {"cumplimiento de tareas verificable"}
                 </strong>
                 {". No observar el problema: "}
                 <strong style={s("color:#FFFFFF;")}>
@@ -142,7 +146,7 @@ export default function Metodo(p: any) {
         </div>
         {" "}
         <div id="resultados" style={s("margin-top:54px;")}>
-          <p style={s("text-align:center;font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:rgba(255,255,255,0.55);margin:0 0 20px;")}>
+          <p style={s("text-align: center; font-family: 'IBM Plex Sans',sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.55); margin: 0 0 20px; position: relative")}>
             {d?.metodoKpiLabel || "KPI DE TUS DATOS"}
           </p>
           {" "}
@@ -167,33 +171,33 @@ export default function Metodo(p: any) {
             <div className="bl5-res" style={s("position:relative;background:rgba(255,255,255,0.05);border:1px solid rgba(119,207,201,0.22);border-radius:16px;padding:20px 16px;text-align:center;cursor:default;transition:background 0.25s ease,border-color 0.25s ease;")}>
               <span style={s("display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(119,207,201,0.16);margin-bottom:12px;")}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"></path>
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
                 </svg>
               </span>
               {" "}
               <h3 style={s("font-size:14px;font-weight:700;color:#FFFFFF;margin:0;")}>
-                {d?.metodoResultados?.[1]?.title || "Alertas a tiempo"}
+                {"Cumplimiento de tareas"}
               </h3>
               {" "}
               <p className="bl5-res-txt" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;")}>
-                {d?.metodoResultados?.[1]?.desc || "Desviaciones de presión y caudal visibles antes del daño."}
+                {"Metas vs. registro real: mediciones por bloque, días en resolver un evento y avance del plan de trabajo del operador."}
               </p>
             </div>
             {" "}
             <div className="bl5-res" style={s("position:relative;background:rgba(255,255,255,0.05);border:1px solid rgba(119,207,201,0.22);border-radius:16px;padding:20px 16px;text-align:center;cursor:default;transition:background 0.25s ease,border-color 0.25s ease;")}>
               <span style={s("display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(119,207,201,0.16);margin-bottom:12px;")}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#77CFC9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"></path>
+                  <path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"></path>
                 </svg>
               </span>
               {" "}
               <h3 style={s("font-size:14px;font-weight:700;color:#FFFFFF;margin:0;")}>
-                {d?.metodoResultados?.[2]?.title || "Control a distancia"}
+                {"Alertas y control a distancia"}
               </h3>
               {" "}
               <p className="bl5-res-txt" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;")}>
-                {d?.metodoResultados?.[2]?.desc || "Sabes qué pasa en cada campo sin estar presente."}
+                {"Desviaciones de presión y caudal visibles antes del daño — sabes qué pasa en cada campo sin estar presente."}
               </p>
             </div>
             {" "}
@@ -206,11 +210,11 @@ export default function Metodo(p: any) {
               </span>
               {" "}
               <h3 style={s("font-size:14px;font-weight:700;color:#FFFFFF;margin:0;")}>
-                {d?.metodoResultados?.[3]?.title || "Capacitación del equipo"}
+                {"Estándar de trabajo"}
               </h3>
               {" "}
               <p className="bl5-res-txt" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.75);margin:0;")}>
-                {d?.metodoResultados?.[3]?.desc || "Tu equipo aprende una metodología de trabajo, y el conocimiento queda en la empresa."}
+                {"Todo el equipo opera bajo una misma metodología, y el conocimiento queda en la empresa."}
               </p>
             </div>
             {" "}
