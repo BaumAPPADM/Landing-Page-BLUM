@@ -48,7 +48,7 @@ export default function Problema(p: any) {
           </p>
         </div>
         {" "}
-        <div style={s("display:flex;align-items:center;justify-content:center;gap:16px;margin-top:34px;")}>
+        <div className="bl5-flow-row" style={s("display:flex;align-items:center;justify-content:center;gap:16px;margin-top:34px;")}>
           <span style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;color:rgba(0,46,43,0.65);")}>
             {d?.problemaLeft || "MEDIR"}
           </span>

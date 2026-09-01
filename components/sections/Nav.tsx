@@ -22,7 +22,7 @@ export default function Nav(p: any) {
         ))}
       </div>
       {" "}
-      <div style={s("display:flex;align-items:center;gap:16px;")}>
+      <div className="bl5-nav-cta" style={s("display:flex;align-items:center;gap:16px;")}>
         <button className="bh4" onClick={scrollToContact} style={s("background:#8FD8D2;color:#002E2B;border:none;border-radius:24px;padding:11px 24px;font-family:'Sora',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;")}>
           {d?.ctaDemoLabel || "Solicitar demo"}
         </button>

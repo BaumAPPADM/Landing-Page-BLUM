@@ -63,7 +63,24 @@ imgBad.length ? bad(`imágenes rotas: ${imgBad.join(', ')}`) : ok(`${srcs.length
 const stega = (html.match(/[​-‏﻿]/g) || []).length;
 stega ? bad(`${stega} caracteres invisibles filtrados al sitio`) : ok('sin residuos de stega');
 
-// 6. rutas
+// 6. los ganchos responsive del diseño existen en la página
+//    Sin esto, un export que añade una media query nueva pasa desapercibido:
+//    la regla queda en el CSS apuntando a una clase que nadie tiene.
+const cssPath = path.join(DESIGN, 'globals.css');
+if (fs.existsSync(cssPath)) {
+  const css = fs.readFileSync(cssPath, 'utf8');
+  const media = [...css.matchAll(/@media[^{]*\{([\s\S]*?)\n  \}/g)].map(m => m[1]).join('\n');
+  const clases = [...new Set([...media.matchAll(/\.([a-zA-Z][\w-]*)/g)].map(m => m[1]))];
+  // Solo importan las clases que el diseño realmente usa en su markup: el CSS
+  // arrastra reglas muertas de iteraciones anteriores y no son un fallo nuestro.
+  const enDiseno = new Set([...h.matchAll(/class="([^"]*)"/g)].flatMap(m => m[1].split(/\s+/)));
+  const usadas = clases.filter(c => enDiseno.has(c));
+  const ausentes = usadas.filter(c => !html.includes(c));
+  ausentes.length ? bad(`ganchos responsive que no llegaron a la página: ${ausentes.join(', ')}`)
+                  : ok(`${usadas.length} ganchos responsive presentes (${clases.length - usadas.length} reglas muertas del diseño ignoradas)`);
+}
+
+// 7. rutas
 for (const r of ['/', '/studio', '/partners.html']) {
   const res = await fetch(BASE + r, { redirect: 'follow' });
   res.ok ? ok(`${r} -> ${res.status}`) : bad(`${r} -> ${res.status}`);

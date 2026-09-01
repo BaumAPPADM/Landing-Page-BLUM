@@ -51,7 +51,7 @@ export default function Contacto(p: any) {
           </div>
         </div>
         {" "}
-        <div style={s("flex:1 1 420px;min-width:320px;background:#FFFFFF;border-radius:20px;padding:34px 32px;box-shadow:0 30px 70px -24px rgba(0,0,0,0.55);")}>
+        <div className="bl5-form-card" style={s("flex:1 1 420px;min-width:320px;background:#FFFFFF;border-radius:20px;padding:34px 32px;box-shadow:0 30px 70px -24px rgba(0,0,0,0.55);")}>
           {(formSent) ? (
             <>
               <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.6;color:#0d6b64;font-weight:600;margin:0;text-align:center;padding:40px 0;")}>

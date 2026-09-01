@@ -32,7 +32,7 @@ export default function AppSection(p: any) {
           </p>
         </div>
         {" "}
-        <div style={s("display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:-26px 0 54px;")}>
+        <div className="bl5-chain-row" style={s("display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:-26px 0 54px;")}>
           <span style={s("display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:700;color:#002E2B;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:18px;padding:9px 16px;")}>
             <span style={s("width:7px;height:7px;border-radius:50%;background:#77CFC9;")}></span>
             {d?.appFlowSteps?.[0] || "Manómetro en el bloque"}

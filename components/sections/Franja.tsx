@@ -18,7 +18,7 @@ export default function Franja(p: any) {
           </svg>
         </span>
         {" "}
-        <p style={s("flex:1 1 460px;max-width:700px;font-family:'Sora',sans-serif;font-size:clamp(19px,2vw,25px);font-weight:700;line-height:1.35;color:#002E2B;margin:0;text-wrap:balance;")}>
+        <p style={s("flex:1 1 460px;max-width:700px;font-family:'Sora',sans-serif;font-size:clamp(19px,2vw,25px);font-weight:700;line-height:1.35;color:#002E2B;margin:0;text-wrap:balance;text-align:center;")}>
           {d?.franjaText?.length ? (
             <RichText value={d?.franjaText} />
           ) : (

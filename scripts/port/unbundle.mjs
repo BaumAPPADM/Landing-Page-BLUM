@@ -33,10 +33,16 @@ const EXT = { 'image/png':'.png','image/jpeg':'.jpg','image/webp':'.webp','image
               'font/woff2':'.woff2','font/woff':'.woff','application/javascript':'.js','text/javascript':'.js','text/css':'.css' };
 
 // nombres reales conocidos, por contenido
-const known = {};
-const assetsDir = 'public/assets';
-if (fs.existsSync(assetsDir)) for (const f of fs.readdirSync(assetsDir))
-  known[crypto.createHash('sha1').update(fs.readFileSync(path.join(assetsDir, f))).digest('hex')] = f;
+const hashDir = (dir) => {
+  const out = {};
+  if (fs.existsSync(dir)) for (const f of fs.readdirSync(dir))
+    out[crypto.createHash('sha1').update(fs.readFileSync(path.join(dir, f))).digest('hex')] = f;
+  return out;
+};
+const known = hashDir('public/assets');
+// Los UUID de las tipografías se regeneran en cada export aunque el archivo sea
+// el mismo: reusar el nombre ya publicado evita duplicar 14 fuentes por export.
+const knownFonts = hashDir('public/fonts');
 
 const urlByUuid = Object.fromEntries(ext.map(e => [e.uuid, e.id]));
 for (const d of ['assets', 'fonts', 'vendor']) fs.mkdirSync(path.join(OUT, d), { recursive: true });
@@ -48,7 +54,7 @@ for (const [uuid, entry] of Object.entries(manifest)) {
   const ex = EXT[entry.mime] || '.bin';
   const sha = crypto.createHash('sha1').update(bytes).digest('hex');
   let rel;
-  if (entry.mime.startsWith('font/')) rel = 'fonts/' + uuid + ex;
+  if (entry.mime.startsWith('font/')) rel = 'fonts/' + (knownFonts[sha] || uuid + ex);
   else if (ex === '.js') {
     const url = urlByUuid[uuid];
     rel = 'vendor/' + (url ? path.basename(new URL(url).pathname) : uuid + '.js');
@@ -58,6 +64,18 @@ for (const [uuid, entry] of Object.entries(manifest)) {
   }
   fs.writeFileSync(path.join(OUT, rel), bytes);
   map[uuid] = rel;
+}
+
+// El CSS global vive en el <helmet> del export: tokens, @font-face y las media
+// queries. Se extrae en cada porteo, porque ahí llegan los cambios de móvil.
+{
+  const head = template.slice(0, template.indexOf('</helmet>'));
+  let css = '';
+  for (const m of head.matchAll(/<style>([\s\S]*?)<\/style>/g)) css += m[1] + '\n\n';
+  for (const [uuid, rel] of Object.entries(map)) css = css.split(uuid).join(rel);
+  css = css.replace(/url\((["']?)fonts\//g, 'url($1/fonts/').replace(/url\((["']?)assets\//g, 'url($1/assets/');
+  fs.writeFileSync(path.join(OUT, 'globals.css'), css);
+  console.log('CSS global:', css.length, 'bytes |', (css.match(/@media/g) || []).length, 'media queries ->', path.join(OUT, 'globals.css'));
 }
 
 let html = template;
