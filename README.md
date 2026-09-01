@@ -2,8 +2,8 @@
 
 Landing de Blum: app Next.js con el contenido gestionado desde Sanity.
 
-- **Sitio:** https://blum-landing-two.vercel.app
-- **Editar contenido:** https://blum-landing-two.vercel.app/studio (o https://blum.sanity.studio)
+- **Sitio:** https://www.blumapps.com
+- **Editar contenido:** https://www.blumapps.com/studio (o https://blum.sanity.studio)
 
 ## Cómo se publica
 

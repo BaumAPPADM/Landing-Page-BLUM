@@ -21,7 +21,7 @@ export default defineConfig({
     // jump straight to the field that owns it.
     presentationTool({
       previewUrl: {
-        origin: process.env.SANITY_STUDIO_PREVIEW_ORIGIN || 'https://blum-landing-two.vercel.app',
+        origin: process.env.SANITY_STUDIO_PREVIEW_ORIGIN || 'https://www.blumapps.com',
         preview: '/',
         previewMode: { enable: '/api/draft-mode/enable' },
       },
