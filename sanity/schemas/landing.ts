@@ -133,6 +133,9 @@ export const landing = defineType({
     f('footerNote', 'Nota', 'string', 'footer'),
     f('footerCta', 'Botón', 'string', 'footer'),
     f('footerColumns', 'Columnas', 'array', 'footer', { of: [{ type: 'footerColumn' }] }),
+    f('instagramUrl', 'Instagram', 'url', 'footer'),
+    f('linkedinUrl', 'LinkedIn', 'url', 'footer'),
+    f('facebookUrl', 'Facebook', 'url', 'footer'),
     f('footerLegal', 'Línea legal', 'string', 'footer'),
   ],
   preview: {

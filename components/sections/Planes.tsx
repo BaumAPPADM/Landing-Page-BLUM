@@ -3,7 +3,7 @@ import { s } from "@/lib/css";
 
 export default function Planes(p: any) {
   const { d } = p;
-  const { plans, setUF, setUSD, ufBtnBg, ufBtnColor, usdBtnBg, usdBtnColor, scrollToContact } = p;
+  const { taxLabel, plans, setUF, setUSD, ufBtnBg, ufBtnColor, usdBtnBg, usdBtnColor, scrollToContact } = p;
   return (
     <section id="planes" style={s("padding:90px 5%;background:#FFFFFF;")}>
       <div style={s("max-width:1160px;margin:0 auto;")}>
@@ -17,7 +17,7 @@ export default function Planes(p: any) {
           </h2>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.6;color:rgba(0,46,43,0.7);max-width:580px;margin:0 auto 8px;")}>
-            {d?.planesSubtitle || "Sin costos ocultos. Todos los planes incluyen las mismas funcionalidades base."}
+            {"Valores "}{taxLabel}{". "}{d?.planesSubtitle || "Sin costos ocultos. Todos los planes incluyen las mismas funcionalidades base."}
           </p>
           {" "}
           <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.6;color:rgba(0,46,43,0.55);max-width:580px;margin:0 auto;")}>
@@ -72,7 +72,7 @@ export default function Planes(p: any) {
                   </span>
                   {" "}
                   <span style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(0,46,43,0.6);")}>
-                    {plan.unit}
+                    {plan.unit}{" "}{taxLabel}
                   </span>
                 </div>
                 {" "}

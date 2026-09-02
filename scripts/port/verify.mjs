@@ -30,7 +30,15 @@ const body = h.slice(h.indexOf('</helmet>') + 9, h.lastIndexOf('</body>'));
 const o = parse(body); o.querySelectorAll('script,style,sc-for,sc-if').forEach(n => n.remove());
 const runs = [];
 (function w(n) { for (const c of n.childNodes) {
-  if (c.nodeType === 3) { const t = norm(c.rawText.replace(/&nbsp;/g, ' ').replace(/\{\{[^}]*\}\}/g, '')); if (t.length > 2) runs.push(t); }
+  if (c.nodeType === 3) {
+    // Un texto con {{ placeholder }} se parte en sus trozos literales: unirlos
+    // fabricaría una frase que la página nunca va a contener, porque en su lugar
+    // renderiza el valor real.
+    for (const trozo of c.rawText.replace(/&nbsp;/g, ' ').split(/\{\{[^}]*\}\}/)) {
+      const t = norm(trozo);
+      if (t.length > 2) runs.push(t);
+    }
+  }
   else if (c.nodeType === 1) w(c);
 } })(o);
 const missing = runs.filter(r => !text.includes(r));

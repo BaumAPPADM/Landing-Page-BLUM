@@ -148,6 +148,7 @@ export default function Landing({ d }: { d: any }) {
     sendForm: () => setSent(true),
     setUF: () => setCurrency('UF'),
     setUSD: () => setCurrency('USD'),
+    taxLabel: isUF ? '+ IVA' : '+ TAX',
     ufBtnBg: isUF ? '#002E2B' : 'transparent',
     ufBtnColor: isUF ? '#FFFFFF' : '#002E2B',
     usdBtnBg: isUF ? 'transparent' : '#002E2B',

@@ -88,7 +88,7 @@ export default function Footer(p: any) {
         </p>
         {" "}
         <div style={s("display:flex;gap:14px;align-items:center;")}>
-          <a className="bh31" href="https://www.instagram.com/blum.riego" target="_blank" rel="noopener" aria-label="Instagram" style={s("display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(119,207,201,0.4);color:#77CFC9;")}>
+          <a className="bh31" href={d?.instagramUrl || "https://www.instagram.com/blumapps/"} target="_blank" rel="noopener" aria-label="Instagram" style={s("display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(119,207,201,0.4);color:#77CFC9;")}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5"></rect>
               <circle cx="12" cy="12" r="4"></circle>
@@ -96,13 +96,13 @@ export default function Footer(p: any) {
             </svg>
           </a>
           {" "}
-          <a className="bh32" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" style={s("display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(119,207,201,0.4);color:#77CFC9;")}>
+          <a className="bh32" href={d?.linkedinUrl || "https://www.linkedin.com/company/blum-app/"} target="_blank" rel="noopener" aria-label="LinkedIn" style={s("display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(119,207,201,0.4);color:#77CFC9;")}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
               <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.17V23H8V8z"></path>
             </svg>
           </a>
           {" "}
-          <a className="bh33" href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" style={s("display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(119,207,201,0.4);color:#77CFC9;")}>
+          <a className="bh33" href={d?.facebookUrl || "https://www.facebook.com/p/Blum-App-61593466250063/"} target="_blank" rel="noopener" aria-label="Facebook" style={s("display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(119,207,201,0.4);color:#77CFC9;")}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>

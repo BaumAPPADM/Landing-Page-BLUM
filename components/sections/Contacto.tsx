@@ -45,8 +45,8 @@ export default function Contacto(p: any) {
               {d?.whatsappLabel || "WhatsApp"}
             </a>
             {" "}
-            <a className="bh20" href={"mailto:" + (d?.contactEmail || "b.sepulveda@blumapss.com")} style={s("display:inline-flex;align-items:center;gap:8px;background:transparent;color:#FFFFFF;border:1.5px solid rgba(255,255,255,0.6);border-radius:26px;padding:13px 26px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:600;")}>
-              {d?.contactEmail || "b.sepulveda@blumapss.com"}
+            <a className="bh20" href={"mailto:" + (d?.contactEmail || "b.sepulveda@blumapps.com")} style={s("display:inline-flex;align-items:center;gap:8px;background:transparent;color:#FFFFFF;border:1.5px solid rgba(255,255,255,0.6);border-radius:26px;padding:13px 26px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:600;")}>
+              {d?.contactEmail || "b.sepulveda@blumapps.com"}
             </a>
           </div>
         </div>
