@@ -27,7 +27,7 @@ export default function Nav(p: any) {
           {d?.ctaDemoLabel || "Solicitar demo"}
         </button>
         {" "}
-        <a className="bh5" href={d?.loginUrl || "https://baumsystem.com/"} target="_blank" rel="noopener" style={s("display:inline-block;font-size:13.5px;font-weight:700;color:#FFFFFF;border:1.5px solid #77CFC9;border-radius:24px;padding:9px 22px;")}>
+        <a className="bh5" href={d?.loginUrl || "https://app.baumsystem.com"} target="_blank" rel="noopener" style={s("display:inline-block;font-size:13.5px;font-weight:700;color:#FFFFFF;border:1.5px solid #77CFC9;border-radius:24px;padding:9px 22px;")}>
           {d?.loginLabel || "Iniciar sesión"}
         </a>
       </div>
