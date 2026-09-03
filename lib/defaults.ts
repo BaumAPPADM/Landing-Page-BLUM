@@ -40,7 +40,6 @@ export const defaults = {
     { img: '/assets/logo-leice-clean.png', alt: 'Leice', height: 78 },
     { img: '/assets/logo-principio-clean.png', alt: 'Principio', height: 56 },
     { img: '/assets/logo-agrosocoin-clean.png', alt: 'Agrosocoin', height: 56 },
-    { img: '/assets/logo-exser-clean.png', alt: 'Exser', height: 56 },
     { img: '/assets/logo-aillin-clean.png', alt: 'Aillin', height: 56 },
   ],
   cifrasItems: [

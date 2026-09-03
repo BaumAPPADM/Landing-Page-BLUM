@@ -65,7 +65,20 @@ function attrs(node) {
 
     if (k === 'style') {
       const fixed = isExpr(v) ? v : v.replace(/url\((["']?)assets\//g, 'url($1/assets/');
-      out.push(isExpr(v) ? `style={s(${exprOf(v)})}` : `style={s(${JSON.stringify(fixed)})}`);
+      if (isExpr(v)) {
+        out.push(`style={s(${exprOf(v)})}`);
+      } else if (/\{\{/.test(fixed)) {
+        // Claude Design interpola {{ expr }} dentro del CSS. JSON.stringify lo
+        // dejaría como texto literal y el botón/estado nunca recibiría el valor.
+        const tpl = fixed
+          .replace(/\\/g, '\\\\')
+          .replace(/`/g, '\\`')
+          .replace(/\$\{/g, '\\${')
+          .replace(/\{\{\s*([\s\S]*?)\s*\}\}/g, (_, e) => '${' + e.trim() + '}');
+        out.push('style={s(`' + tpl + '`)}');
+      } else {
+        out.push(`style={s(${JSON.stringify(fixed)})}`);
+      }
       continue;
     }
     if (k.startsWith('sc-camel-')) {

@@ -162,7 +162,6 @@ const doc = {
     { image: await img('logo-leice-clean.png'), alt: 'Leice', height: 78 },
     { image: await img('logo-principio-clean.png'), alt: 'Principio', height: 56 },
     { image: await img('logo-agrosocoin-clean.png'), alt: 'Agrosocoin', height: 56 },
-    { image: await img('logo-exser-clean.png'), alt: 'Exser', height: 56 },
     { image: await img('logo-aillin-clean.png'), alt: 'Aillin', height: 56 },
   ]),
 

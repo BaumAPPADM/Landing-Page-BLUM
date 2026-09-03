@@ -18,7 +18,7 @@ export default function Metodo(p: any) {
         </div>
         {" "}
         <div style={s("display:flex;gap:8px;align-items:stretch;flex-wrap:wrap;margin-bottom:44px;")}>
-          <div style={s("flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:{{ stageOp }};transform:translateY({{ stageY }});transition:opacity 0.75s ease 0s,transform 0.75s ease 0s;")}>
+          <div style={s(`flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:${stageOp};transform:translateY(${stageY});transition:opacity 0.75s ease 0s,transform 0.75s ease 0s;`)}>
             <span style={s("display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#77CFC9;color:#002E2B;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;")}>
               {d?.metodoStages?.[0]?.num || "01"}
             </span>
@@ -50,7 +50,7 @@ export default function Metodo(p: any) {
             </p>
           </div>
           {" "}
-          <div className="bl5-stage-arrow" style={s("display:flex;align-items:center;justify-content:center;flex:0 0 34px;opacity:{{ stageOp }};transition:opacity 0.6s ease 0.4s;")}>
+          <div className="bl5-stage-arrow" style={s(`display:flex;align-items:center;justify-content:center;flex:0 0 34px;opacity:${stageOp};transition:opacity 0.6s ease 0.4s;`)}>
             <span style={s("display:flex;flex-direction:column;align-items:center;gap:5px;")}>
               <span style={s("width:5px;height:5px;border-radius:50%;background:rgba(119,207,201,0.5);")}></span>
               {" "}
@@ -63,7 +63,7 @@ export default function Metodo(p: any) {
             </span>
           </div>
           {" "}
-          <div style={s("flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:{{ stageOp }};transform:translateY({{ stageY }});transition:opacity 0.75s ease 0.7s,transform 0.75s ease 0.7s;")}>
+          <div style={s(`flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:${stageOp};transform:translateY(${stageY});transition:opacity 0.75s ease 0.7s,transform 0.75s ease 0.7s;`)}>
             <span style={s("display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#77CFC9;color:#002E2B;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;")}>
               {d?.metodoStages?.[1]?.num || "02"}
             </span>
@@ -95,7 +95,7 @@ export default function Metodo(p: any) {
             </p>
           </div>
           {" "}
-          <div className="bl5-stage-arrow" style={s("display:flex;align-items:center;justify-content:center;flex:0 0 34px;opacity:{{ stageOp }};transition:opacity 0.6s ease 1.1s;")}>
+          <div className="bl5-stage-arrow" style={s(`display:flex;align-items:center;justify-content:center;flex:0 0 34px;opacity:${stageOp};transition:opacity 0.6s ease 1.1s;`)}>
             <span style={s("display:flex;flex-direction:column;align-items:center;gap:5px;")}>
               <span style={s("width:5px;height:5px;border-radius:50%;background:rgba(119,207,201,0.5);")}></span>
               {" "}
@@ -108,7 +108,7 @@ export default function Metodo(p: any) {
             </span>
           </div>
           {" "}
-          <div style={s("flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:{{ stageOp }};transform:translateY({{ stageY }});transition:opacity 0.75s ease 1.4s,transform 0.75s ease 1.4s;")}>
+          <div style={s(`flex:1 1 280px;min-width:270px;background:rgba(119,207,201,0.14);border:1px solid rgba(119,207,201,0.35);border-radius:20px;padding:34px 30px;opacity:${stageOp};transform:translateY(${stageY});transition:opacity 0.75s ease 1.4s,transform 0.75s ease 1.4s;`)}>
             <span style={s("display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#77CFC9;color:#002E2B;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;")}>
               {d?.metodoStages?.[2]?.num || "03"}
             </span>

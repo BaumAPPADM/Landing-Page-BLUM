@@ -27,11 +27,11 @@ export default function Planes(p: any) {
         {" "}
         <div style={s("display:flex;justify-content:center;margin-bottom:40px;")}>
           <div style={s("display:inline-flex;background:#F4FAF9;border:1px solid rgba(0,46,43,0.1);border-radius:20px;padding:4px;")}>
-            <button onClick={setUSD} style={s("border:none;border-radius:16px;padding:8px 20px;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;background:{{ usdBtnBg }};color:{{ usdBtnColor }};")}>
+            <button onClick={setUSD} style={s(`border:none;border-radius:16px;padding:8px 20px;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;background:${usdBtnBg};color:${usdBtnColor};`)}>
               {d?.currencyUsdLabel || "USD · Internacional"}
             </button>
             {" "}
-            <button onClick={setUF} style={s("border:none;border-radius:16px;padding:8px 20px;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;background:{{ ufBtnBg }};color:{{ ufBtnColor }};")}>
+            <button onClick={setUF} style={s(`border:none;border-radius:16px;padding:8px 20px;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;background:${ufBtnBg};color:${ufBtnColor};`)}>
               {d?.currencyUfLabel || "UF · Chile"}
             </button>
           </div>
@@ -40,7 +40,7 @@ export default function Planes(p: any) {
         <div style={s("display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch;")}>
           {(plans || []).map((plan, i) => (
             <React.Fragment key={i}>
-              <div style={s("position:relative;background:#FFFFFF;border:{{ plan.border }};border-radius:22px;padding:38px 32px;box-shadow:0 4px 16px rgba(0,20,18,0.06);display:flex;flex-direction:column;")}>
+              <div style={s(`position:relative;background:#FFFFFF;border:${plan.border};border-radius:22px;padding:38px 32px;box-shadow:0 4px 16px rgba(0,20,18,0.06);display:flex;flex-direction:column;`)}>
                 {(plan.highlight) ? (
                   <>
                     <span style={s("position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#002E2B;color:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:700;border-radius:16px;padding:6px 16px;white-space:nowrap;")}>
@@ -80,7 +80,7 @@ export default function Planes(p: any) {
                   {plan.example}
                 </p>
                 {" "}
-                <button className="bh18" onClick={scrollToContact} style={s("align-self:flex-start;background:{{ plan.btnBg }};color:{{ plan.btnColor }};border:{{ plan.btnBorder }};border-radius:26px;padding:14px 30px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;transition:opacity 0.2s ease,background 0.2s ease;")}>
+                <button className="bh18" onClick={scrollToContact} style={s(`align-self:flex-start;background:${plan.btnBg};color:${plan.btnColor};border:${plan.btnBorder};border-radius:26px;padding:14px 30px;font-family:'Sora',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;transition:opacity 0.2s ease,background 0.2s ease;`)}>
                   {plan.cta}
                 </button>
                 {" "}
