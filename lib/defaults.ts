@@ -12,7 +12,7 @@ export const defaults = {
   ],
   ctaDemoLabel: 'Solicitar demo',
   loginLabel: 'Iniciar sesión',
-  loginUrl: 'https://baumsystem.com/',
+  loginUrl: 'https://app.baumsystem.com',
   appScreens: [
     { title: 'Mapa', desc: 'Ve tus sectores, válvulas y equipos sobre el mapa real del campo. Detecta anomalías sin caminar el campo entero.', img: '/assets/mock-app-mapa.png', iconPath: 'M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z' },
     { title: 'Medir', desc: 'Registra caudal, presión y estado de cada equipo directo en terreno, con foto incluida. Funciona 100% offline.', img: '/assets/mock-app-medicion.png', iconPath: 'M12 8v4l3 3 M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z' },

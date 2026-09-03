@@ -56,7 +56,7 @@ const doc = {
   ]),
   ctaDemoLabel: 'Solicitar demo',
   loginLabel: 'Iniciar sesión',
-  loginUrl: 'https://baumsystem.com/',
+  loginUrl: 'https://app.baumsystem.com',
   chatTitle: '¿Tienes dudas?',
   chatSubtitle: 'Contáctanos',
   chatUrl: 'https://wa.link/l88bq2',
