@@ -155,14 +155,11 @@ const doc = {
 
   partnersEyebrow: 'CONFÍAN EN BLUM',
   partnersLogos: arr([
-    { image: await img('logo-garces-clean.png'), alt: 'Garcés', height: 78 },
     { image: await img('logo-frutexsa-clean.png'), alt: 'Frutexsa', height: 78 },
     { image: await img('logo-bafar-clean.png'), alt: 'Bafar', height: 96 },
     { image: await img('logo-ddc-clean.png'), alt: 'DDC', height: 110 },
     { image: await img('logo-leice-clean.png'), alt: 'Leice', height: 78 },
     { image: await img('logo-principio-clean.png'), alt: 'Principio', height: 56 },
-    { image: await img('logo-agrosocoin-clean.png'), alt: 'Agrosocoin', height: 56 },
-    { image: await img('logo-aillin-clean.png'), alt: 'Aillin', height: 56 },
   ]),
 
   empezarTitle: 'Dos formas de empezar',

@@ -33,14 +33,11 @@ export const defaults = {
     { segment: 'Productor multicampo', range: '1.000+ ha', desc: 'Para grandes operaciones multicampo.', priceUF: '0,25 UF', priceUSD: '$9,5', unitUF: '/ ha / año', unitUSD: 'USD / ha / año', exUF: 'Ej. 2.000 ha → 500 UF/año', exUSD: 'Ej. 2.000 ha → $19.000 USD/año', highlight: false, cta: 'Contactar ventas', features: ['Todas las funcionalidades incluidas', 'Usuarios ilimitados', 'Account manager dedicado', 'SLA garantizado'] },
   ],
   partnersLogos: [
-    { img: '/assets/logo-garces-clean.png', alt: 'Garcés', height: 78 },
     { img: '/assets/logo-frutexsa-clean.png', alt: 'Frutexsa', height: 78 },
     { img: '/assets/logo-bafar-clean.png', alt: 'Bafar', height: 96 },
     { img: '/assets/logo-ddc-clean.png', alt: 'DDC', height: 110 },
     { img: '/assets/logo-leice-clean.png', alt: 'Leice', height: 78 },
     { img: '/assets/logo-principio-clean.png', alt: 'Principio', height: 56 },
-    { img: '/assets/logo-agrosocoin-clean.png', alt: 'Agrosocoin', height: 56 },
-    { img: '/assets/logo-aillin-clean.png', alt: 'Aillin', height: 56 },
   ],
   cifrasItems: [
     { target: 12000, prefix: '+', label: 'HECTÁREAS GESTIONADAS' },
