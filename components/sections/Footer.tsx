@@ -56,6 +56,14 @@ export default function Footer(p: any) {
             <a className="bh28" href={d?.footerColumns?.[1]?.links?.[1]?.href || "#contacto"} style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
               {d?.footerColumns?.[1]?.links?.[1]?.label || "Contacto"}
             </a>
+            {" "}
+            <a className="bh28" href="/privacidad" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+              Política de privacidad
+            </a>
+            {" "}
+            <a className="bh28" href="/terminos" style={s("font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.75);")}>
+              Términos y condiciones
+            </a>
           </div>
         </div>
         {" "}
@@ -84,7 +92,11 @@ export default function Footer(p: any) {
       {" "}
       <div style={s("max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.12);padding-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;")}>
         <p style={s("font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:rgba(255,255,255,0.55);margin:0;")}>
-          {d?.footerLegal || "© 2026 BLUM — Un producto de Baum System"}
+          {d?.footerLegal || "© 2026 BLUM — CyG Riego SpA"}
+          {" · "}
+          <a href="/privacidad" style={s("color:rgba(255,255,255,0.55);")}>Privacidad</a>
+          {" · "}
+          <a href="/terminos" style={s("color:rgba(255,255,255,0.55);")}>Términos</a>
         </p>
         {" "}
         <div style={s("display:flex;gap:14px;align-items:center;")}>
