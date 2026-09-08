@@ -6,6 +6,7 @@ import './hover.css';
 import { getLanding } from '@/sanity/queries';
 import { urlFor } from '@/sanity/image';
 import { SanityLive } from '@/sanity/live';
+import Analytics from './analytics';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.blumapps.com';
 
@@ -33,6 +34,11 @@ export async function generateMetadata(): Promise<Metadata> {
       ...(og ? { images: [og] } : {}),
     },
     icons: { icon: '/assets/isotipo-nave.png' },
+    // Verificación de Google Search Console por etiqueta HTML (opcional si se
+    // verifica el dominio por DNS). Valor: NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION.
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+      : {}),
   };
 }
 
@@ -42,6 +48,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="es">
       <body>
         {children}
+        <Analytics />
         <SanityLive />
         {isDraft ? <VisualEditing /> : null}
       </body>
