@@ -8,7 +8,8 @@ import Script from 'next/script';
 
 // Fallback: propiedad "BLUM web (blumapps.com)" creada el 8-sep-2026.
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-CJ4H8TMBTQ';
-const METRICOOL_HASH = process.env.NEXT_PUBLIC_METRICOOL_HASH;
+// Fallback: hash del píxel de Metricool para www.blumapps.com (8-sep-2026).
+const METRICOOL_HASH = process.env.NEXT_PUBLIC_METRICOOL_HASH || '2778fa0e123c7c995b25dfd07dc20167';
 
 export default function Analytics() {
   return (
