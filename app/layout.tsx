@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: 'es_CL',
       ...(og ? { images: [og] } : {}),
     },
-    icons: { icon: '/assets/isotipo-nave.png' },
+    icons: { icon: '/assets/favicon.png', apple: '/assets/apple-touch-icon.png' },
     // Verificación de Google Search Console por etiqueta HTML (opcional si se
     // verifica el dominio por DNS). Valor: NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION.
     ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
